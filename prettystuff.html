@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +7,7 @@
 body {
     font-family: "Lato", Impact;
     transition: background-color .5s;
+	background-color: #1B0340;
 }
 
 .menuButton {
@@ -24,12 +26,23 @@ body {
 
 }
 
+.teacherImages {
+	width:100px;
+	height:100px;
+	border-radius: 50%;
 
+}
+
+.grades {
+	font-size:15px;
+	color:gray;
+
+}
 
 h2 {
 	text-align:center;
 	font-size:36px; 
-
+	color:gray;
 }
 
 .sidenav {
@@ -105,24 +118,66 @@ h2 {
 
 <div id="main">
   <h2>Synergy 2.0</h2>
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Courses and Other Info</span>
+  <span style="font-size:30px;cursor:pointer;color:gray" onclick="openNav()">&#9776; Courses and Other Info</span>
 </div>
+
+<table cellpadding="12" align ="center">
+	<tr>
+		<th>
+		<img src = "http://i.dailymail.co.uk/i/pix/2014/10/02/article-P-3675c99d-abc5-4c06-a0f7-8c0951a9d589-6T1V1kW2fHSK2-112_634x356.jpg" class=teacherImages></img>
+		</th>
+		<th>
+		<img src = "http://i.dailymail.co.uk/i/pix/2014/10/02/article-P-3675c99d-abc5-4c06-a0f7-8c0951a9d589-6T1V1kW2fHSK2-112_634x356.jpg" class=teacherImages></img>
+		</th>
+		<th>
+		<img src = "http://i.dailymail.co.uk/i/pix/2014/10/02/article-P-3675c99d-abc5-4c06-a0f7-8c0951a9d589-6T1V1kW2fHSK2-112_634x356.jpg" class=teacherImages></img>
+		</th>
+		<th>
+		<img src = "http://i.dailymail.co.uk/i/pix/2014/10/02/article-P-3675c99d-abc5-4c06-a0f7-8c0951a9d589-6T1V1kW2fHSK2-112_634x356.jpg" class=teacherImages></img>
+		</th>
+		<th>
+		<img src = "http://i.dailymail.co.uk/i/pix/2014/10/02/article-P-3675c99d-abc5-4c06-a0f7-8c0951a9d589-6T1V1kW2fHSK2-112_634x356.jpg" class=teacherImages></img>
+		</th>
+		<th>
+		<img src = "http://i.dailymail.co.uk/i/pix/2014/10/02/article-P-3675c99d-abc5-4c06-a0f7-8c0951a9d589-6T1V1kW2fHSK2-112_634x356.jpg" class=teacherImages></img>
+		</th>
+		<th>
+		<img src = "http://i.dailymail.co.uk/i/pix/2014/10/02/article-P-3675c99d-abc5-4c06-a0f7-8c0951a9d589-6T1V1kW2fHSK2-112_634x356.jpg" class=teacherImages></img>
+		</th>
+		<th>
+		<img src = "http://i.dailymail.co.uk/i/pix/2014/10/02/article-P-3675c99d-abc5-4c06-a0f7-8c0951a9d589-6T1V1kW2fHSK2-112_634x356.jpg" class=teacherImages></img>
+		</th>
+
+	
+	</tr>
+	<tr class = "grades" align = "center";>
+		<td>A</td>
+		<td>A</td>
+		<td>A</td>
+		<td>A</td>
+		<td>A</td>
+		<td>A</td>
+		<td>A</td>
+		<td>A</td>
+	</tr>
+
+
+
+</table>
 
 <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    document.body.style.backgroundColor = "#1B0340";
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
-    document.body.style.backgroundColor = "white";
+    document.body.style.backgroundColor = "#1B0340";
 }
 </script>
      
 </body>
 </html> 
-
-
