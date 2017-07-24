@@ -7,6 +7,7 @@ public class Class extends Course {
 	int num;
 	Student[] students;
 	boolean percentage;
+	boolean weighted;
 	ArrayList<LearningTarget> targets;
 	int index = 0;
 	public Class(int number) {

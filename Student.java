@@ -1,4 +1,5 @@
 public class Student {
+	double gpa;
 	int id;
 	String password;
 	int grade;
@@ -13,6 +14,18 @@ public class Student {
 		index = new int[8];
 		grades = new double[8];
 		letters = new String[8];
+	}
+	public double gpa() {
+		gpa = 0;
+		for(int i=0;i<8;i++) {
+			if(letters[i].equals("A")) gpa+=4;
+			if(letters[i].equals("B")) gpa+=3;
+			if(letters[i].equals("C")) gpa+=2;
+			if(letters[i].equals("D")) gpa+=1;
+			if(schedule[i].weighted) gpa++;
+		}
+		gpa/=8;
+		return gpa;
 	}
 	public void update() {
 		for(int i=0;i<8;i++) {
@@ -30,6 +43,7 @@ public class Student {
 				else letters[i] = "F";
 			}
 		}
+		gpa();
 	}
 	
 	public double classgrade(int classnum) {
