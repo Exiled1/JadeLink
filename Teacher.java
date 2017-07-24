@@ -1,7 +1,7 @@
 public class Teacher {
 	String fname, lname;
 	Course[] courses;
-	//School school;
+	School school;
 	public Teacher() {
 		courses = new Course[8];
 	}
