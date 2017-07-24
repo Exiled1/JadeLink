@@ -12,13 +12,24 @@ public class School {
 		ArrayList<Class> classes = new ArrayList<Class>();
 		students.add(new Student(100000,10,"Russell","Chai"));
 		students.add(new Student(100001,10,"Justin","Yang"));
-		classes.add(new Class(10,1,"JAVA",1,true,false));
-		classes.get(0).addStudent(students.get(0));
-		classes.get(0).addStudent(students.get(1));
-		classes.get(0).addTarget(new LearningTarget("Target 1",classes.get(0).num));
-		classes.get(0).addAssignment(new Assignment("Homework",classes.get(0).num),0);
-		classes.get(0).addGrade(100000, 92, "Homework");
-		classes.get(0).addGrade(100001, 94, "Homework");
+		for(int i=0;i<8;i++) {
+			classes.add(new Class(10,1,"JAVA",i+1,true,false));
+			classes.get(i).addStudent(students.get(0));
+			classes.get(i).addStudent(students.get(1));
+			classes.get(i).addTarget(new LearningTarget("Target 1",classes.get(0).num));
+			classes.get(i).addAssignment(new Assignment("Homework",classes.get(0).num),0);
+			classes.get(i).addGrade(100000, 92, "Homework");
+			classes.get(i).addGrade(100001, 94, "Homework");
+			classes.get(i).targets.get(0).average();
+		}
+		for(int i=0;i<8;i++) {
+			students.get(0).classgrade(i);
+			students.get(1).classgrade(i);
+		}
+		students.get(0).update();
+		students.get(1).update();
+		System.out.println(students.get(0).gpa);
+		System.out.println(students.get(1).gpa);
 		/*Scanner in = new Scanner(System.in);
 		while(true) {
 			String[] input = in.nextLine().split(" ");

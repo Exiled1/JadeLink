@@ -35,7 +35,7 @@ public class Class extends Course {
 					for(int k=0;k<as.num;k++) {
 						if(id == students[k].id) {
 							as.grades[k] = grade;
-							//students[k].classgrade(period - 1);
+							students[k].classgrade(period - 1);
 							//students[k].update();
 							System.out.println(students[k].fname + "'s grade is now: " + grade + " in " + name);
 							break;
