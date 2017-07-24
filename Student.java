@@ -3,9 +3,9 @@ public class Student {
 	String password;
 	int grade;
 	String fname, lname;
-	Course[] schedule;
+	Class[] schedule;
 	School school;
 	public Student() {
-		schedule = new Course[8];
+		schedule = new Class[8];
 	}
 }
