@@ -1,7 +1,9 @@
 public class Student {
-	public static void main(String[] args) {
-		System.out.println("HI");
-	}
+	int id;
+	String password;
+	int grade;
+	String fname, lname;
+	
 	public Student() {
 		
 	}
