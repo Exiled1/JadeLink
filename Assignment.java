@@ -3,7 +3,8 @@ public class Assignment {
 	LearningTarget target;
 	double[] grades;
 	int num;
-	public Assignment(int n) {
+	public Assignment(String na,int n) {
+		name = na;
 		num = n;
 		grades = new double[num];
 	}

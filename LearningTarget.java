@@ -5,7 +5,8 @@ public class LearningTarget {
 	String name, description;
 	ArrayList<Assignment> assignments;
 	double[] grades;
-	public LearningTarget(int num) {
+	public LearningTarget(String n, int num) {
+		name = n;
 		grades = new double[num];
 		assignments = new ArrayList<Assignment>();
 	}

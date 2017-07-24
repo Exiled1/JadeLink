@@ -9,11 +9,20 @@ public class Student {
 	School school;
 	double[] grades;
 	String[] letters;
-	public Student() {
+	public String toString() {
+		return fname + " " + lname + ". ID: " + id + ". Grade: " + grade;
+	}
+	public Student(int idid, int gr, String f, String l) {
+		gpa = 0;
+		id = idid;
+		grade = gr;
+		fname = f;
+		lname = l;
 		schedule = new Class[8];
 		index = new int[8];
 		grades = new double[8];
 		letters = new String[8];
+		System.out.println("New Student: " + this.toString());
 	}
 	public double gpa() {
 		gpa = 0;
