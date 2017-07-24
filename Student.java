@@ -31,6 +31,7 @@ public class Student {
 			}
 		}
 	}
+	
 	public double classgrade(int classnum) {
 		double grade=0;
 		Class temp = schedule[classnum];
@@ -38,6 +39,7 @@ public class Student {
 			grade+=temp.targets.get(i).grades[index[classnum]];
 		}
 		grade/=temp.targets.size();
+		grades[classnum] = grade;
 		return grade;
 	}
 }

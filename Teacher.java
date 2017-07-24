@@ -1,8 +1,8 @@
 public class Teacher {
 	String fname, lname;
-	Course[] courses;
+	Class [] classes;
 	School school;
 	public Teacher() {
-		courses = new Course[8];
+		classes = new Class[8];
 	}
 }

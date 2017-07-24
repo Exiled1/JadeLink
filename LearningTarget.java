@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class LearningTarget {
+	Class class1;
 	String name, description;
 	ArrayList<Assignment> assignments;
 	double[] grades;
