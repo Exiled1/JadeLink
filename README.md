@@ -5,3 +5,5 @@ This is a revamp of the regular StudentVue web application, there are 4 mini tea
 
 
 thing that we're using for the app: https://www.google.com/script/start/
+
+How to make stuff for a web app: https://codelabs.developers.google.com/codelabs/polymer-firebase-pwa/index.html?index=..%2F..%2Findex#0
