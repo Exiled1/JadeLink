@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h2{
+	text-align:center;
+	font-size:36px;
+}
+.menuButton{
+	padding:10px 10px 10px 10px;
+	background-color: transparent;
+	border-color:transparent;
+	color:white;
+	font-size:20px; color:gray;
+	}
+.menuButton:hover{
+	color:white;
+}
+.teacherImages{
+	width:100px;
+	height:100px;
+	border-radius:50%;
+
+}
+.grades{
+	color:gray;
+	font-size:20px;
+}
+.scores{
+	color:gray;
+	font-size:20px;
+}
+.studentImages{
+	width:200px;
+	height:200px;
+	border-radius:50%;
+
+}
+body {
+    font-family: "Lato", Verdana;
+	background-color:#1B0340;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <!--<a href="#">Chemisty</a>-->
+  <button id = "chemButton" class = "menuButton">Chemisty</button>
+  <a href="#"></a>
+  <button id = "englishButton"class = "menuButton">English</button>
+  <a href="#"></a>
+  <button id = "spanishButton"class = "menuButton">Spanish</button>
+  <a href="#"></a>
+  <button id = "statsButton"class = "menuButton">Statistics</button>
+  <a href="#"></a>
+  <button id = "javaButton"class = "menuButton">Java</button>
+  <a href="#"></a>
+  <button id = "historyButton"class = "menuButton">History</button>
+  <a href="#"></a>
+  <button id = "peButton"class = "menuButton">PE</button>
+  <a href="#"></a>
+  <button id = "studyButton"class = "menuButton">Studyhall</button>
+  <a href="#"></a>	
+  <button id = "attendanceButton"class = "menuButton">Attendance</button>
+
+</div>
+
+<div id="main">
+  <h2 style = "color:gray"> Synergy 2.0</h2>
+  <span style="font-size:30px;cursor:pointer; color:gray;" onclick="openNav()">&#9776; Courses and Other Info</span>
+  <br align = "center">
+	<p align = "center"><img align = "center" src = "http://i2.kym-cdn.com/entries/icons/mobile/000/009/515/BadLuckBryan.jpg" class = "studentImages"></img></p>
+  </br>
+  <br>
+	<p align = "center" style = "font-size:24px; color:gray;"> Sample Name</p>
+  </br>
+</div>
+
+<table cellpadding="12" align = "center">
+	<tr>
+		<th>
+		<input type="image" src="https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" name="imageButton" class="teacherImages" onClick="myFunction()"/>
+		</th>
+		<th>
+		<img src = "https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" class =teacherImages></img> 
+		</th>
+		<th>
+		<img src = "https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" class =teacherImages></img> 
+		</th>
+		<th>
+		<img src = "https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" class =teacherImages></img> 
+		</th>
+		<th>
+		<img src = "https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" class =teacherImages></img> 
+		</th>
+		<th>
+		<img src = "https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" class =teacherImages></img> 
+		</th>
+		<th>
+		<img src = "https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" class =teacherImages></img> 
+		</th>
+		<th>
+		<img src = "https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" class =teacherImages></img> 
+		</th>
+	</tr>
+	<tr align = "center">
+	
+		<td class = "grades">A</td>
+		<td class = "grades">A</td>
+		<td class = "grades">A</td>
+		<td class = "grades">A</td>
+		<td class = "grades">A</td>
+		<td class = "grades">A</td>
+		<td class = "grades">A</td>
+		<td class = "grades">A</td>
+		
+	
+	</tr>
+	<tr align = "center">
+	
+		<td class = "scores">91%</td>
+		<td class = "scores">94%</td>
+		<td class = "scores">92%</td>
+		<td class = "scores">99%</td>
+		<td class = "scores">96%</td>
+		<td class = "scores">90%</td>
+		<td class = "scores">93%</td>
+		<td class = "scores">100%</td>
+		
+	
+	</tr>
+
+</table>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "#1B0340";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "#1B0340";
+}
+function myFunction() {
+ var myWindow = window.open("", "MsgWindow", "width=600,height=400");
+    myWindow.document.write("<p>This is sample text</p>");
+
+}
+</script>
+     
+</body>
+</html> 
+
+
