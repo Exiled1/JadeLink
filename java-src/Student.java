@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Student {
+	//student information
 	double gpa;
 	int id;
 	String password;
@@ -13,9 +14,11 @@ public class Student {
 	ArrayList<Absent> absence; 
 	
 	String[] letters;
+	//return student's name, ID, and grade as a string
 	public String toString() {
 		return fname + " " + lname + ". ID: " + id + ". Grade: " + grade;
 	}
+	
 	public Student(int idid, int gr, String f, String l) {
 		gpa = 0;
 		id = idid;
@@ -29,6 +32,7 @@ public class Student {
 		absence = new ArrayList<Absent>();
 		System.out.println("New Student: " + this.toString());
 	}
+	//compute gpa
 	public double gpa() {
 		gpa = 0;
 		for(int i=0;i<8;i++) {
@@ -41,6 +45,7 @@ public class Student {
 		gpa/=8;
 		return gpa;
 	}
+	//updating students grades
 	public void update() {
 		for(int i=0;i<8;i++) {
 			if(schedule[i].percentage) {
@@ -60,6 +65,7 @@ public class Student {
 		gpa();
 	}
 	
+	//calculating students grade by averaging all the learning targets
 	public double classgrade(int classnum) {
 		double grade=0;
 		Class temp = schedule[classnum];
@@ -71,6 +77,7 @@ public class Student {
 		return grade;
 	}
 	
+	//adding an absence
 	public void addAbsence(int month, int day, int year, int period, boolean excused) {
 		absence.add(new Absent(month, day, year, period, excused));
 		System.out.println(fname + " " + lname + " had an absence on " + month + "/" + day + "/"+ year + ".");

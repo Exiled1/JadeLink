@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 public class Class extends Course {
+	//Class information
 	String name;
 	int id;
 	School school;
@@ -12,6 +13,8 @@ public class Class extends Course {
 	boolean weighted;
 	ArrayList<LearningTarget> targets;
 	int index = 0;
+	
+	//returns class name as a string
 	public String toString() {
 		return "Class: " + name;
 	}
@@ -27,6 +30,7 @@ public class Class extends Course {
 		//teacher.classes[period-1] = this;
 		System.out.println(this.toString() + ". Period: " + period + ". ID: " + id + ". ");
 	}
+	//changes student's grade on a certain assignment
 	public void addGrade(int id, int grade, String name) {
 		for(int i=0;i<targets.size();i++) {
 			for(int j=0;j<targets.get(i).assignments.size();j++) {
@@ -46,14 +50,17 @@ public class Class extends Course {
 			}
 		}
 	}
+	//add an assignment to a target
 	public void addAssignment(Assignment as, int target) {
 		System.out.println("New Assignment: " + as.name + " added to Target: " + targets.get(target).name);
 		targets.get(target).assignments.add(as);
 	}
+	//adding a learning target
 	public void addTarget(LearningTarget ta) {
 		System.out.println("New Learning Target: " + ta.name);
 		targets.add(ta);
 	}
+	//adding a student to class
 	public void addStudent(Student st) {
 		students[index] = st;
 		st.schedule[period-1] = this;

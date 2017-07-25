@@ -1,4 +1,5 @@
 public class Assignment {
+	//assignment information
 	String name;
 	LearningTarget target;
 	double[] grades;
@@ -8,6 +9,7 @@ public class Assignment {
 		num = n;
 		grades = new double[num];
 	}
+	//adding or changing a students grade on assigment
 	public void addGrade(int id, double grade) {
 		for(int i=0;i<num;i++) {
 			if(id == target.class1.students[i].id) {

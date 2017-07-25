@@ -4,17 +4,21 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class School {
+	//school's name
 	String name;
 	
 	public School() {
 		
 	}
+	//main function
 	public static void main(String[] args) throws FileNotFoundException {
+		//getting student information
 		File tf = new File("Student Test data.csv");
 		Scanner in = new Scanner(tf);
 		ArrayList<Student> students = new ArrayList<Student>();
 		ArrayList<Class> classes = new ArrayList<Class>();
 		in.nextLine();
+		//getting all the students
 		for(int i=0;i<1000;i++) {
 			//students.add(new Student(i+100000,9+(i%4),"Jason","Shi"));
 			String[] input = in.nextLine().split(",");
@@ -26,6 +30,7 @@ public class School {
 			}
 		}
 		in.close();
+		//getting all the classes
 		for(int i=0;i<40;i++) {
 			classes.add(new Class(25,i+1,"JAVA"+(i+1),(i)%8+1,true,false));
 		}
