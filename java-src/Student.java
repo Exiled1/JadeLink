@@ -81,5 +81,10 @@ public class Student {
 	public void addAbsence(int month, int day, int year, int period, boolean excused) {
 		absence.add(new Absent(month, day, year, period, excused));
 		System.out.println(fname + " " + lname + " had an absence on " + month + "/" + day + "/"+ year + ".");
+		if(absence.size() >= 3) {
+			System.out.println();
+			System.out.println(fname + " " + lname + " has 3 or more absences. Detention. ");
+			System.out.println();
+		}
 	}
 }

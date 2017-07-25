@@ -33,6 +33,19 @@ public class School {
 		//getting all the classes
 		for(int i=0;i<40;i++) {
 			classes.add(new Class(25,i+1,"JAVA"+(i+1),(i)%8+1,true,false));
+			classes.get(i).addTarget(new LearningTarget("Target 1",classes.get(0).num));
+			classes.get(i).addAssignment(new Assignment("Homework",classes.get(0).num),0);
+			classes.get(i).addTarget(new LearningTarget("Target 2",classes.get(0).num));
+			classes.get(i).addAssignment(new Assignment("Homework2",classes.get(0).num),1);
+			classes.get(i).addAssignment(new Assignment("Homework3",classes.get(0).num),1);
+			for(int j=0;j<25;j++) {
+				classes.get(i).addStudent(students.get(25*i+j));
+				classes.get(i).addGrade(students.get(25*i+j).id, j*4, "Homework");
+				classes.get(i).addGrade(students.get(25*i+j).id, 100, "Homework2");
+			}
+			classes.get(i).targets.get(0).average();
+			classes.get(i).targets.get(1).average();
+			classes.get(i).list();
 		}
 		/*students.add(new Student(100000,10,"Russell","Chai"));
 		students.add(new Student(100001,10,"Justin","Yang"));

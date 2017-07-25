@@ -68,4 +68,20 @@ public class Class extends Course {
 		index++;
 		System.out.println(st.fname + " " + st.lname + " added to Class: " + name);
 	}
+	//Lists all students and grades
+	public void list() {
+		System.out.println(this.toString());
+		for(int i=0;i<index;i++) {
+			Student c = students[i];
+			System.out.println(c.fname + " " + c.lname + " has a " + c.classgrade(period-1) + " in this class.");
+		}
+	}
+	//Adds absent student
+	public void addAbsence(int id, int m, int d, int y, boolean e) {
+		for(int i=0;i<index;i++) {
+			if(students[i].id == id) {
+				students[i].addAbsence(m, d, y, period, e);
+			}
+		}
+	}
 }
