@@ -10,7 +10,7 @@ public class Student {
 	int[] index;
 	School school;
 	double[] grades;
-	ArrayList<Absent>  
+	ArrayList<Absent> absence; 
 	
 	String[] letters;
 	public String toString() {
@@ -68,5 +68,9 @@ public class Student {
 		grade/=temp.targets.size();
 		grades[classnum] = grade;
 		return grade;
+	}
+	
+	public void addAbsence(int month, int day, int year, int period, boolean excused) {
+		absence.add(new Absent(month, day, year, period, excused));
 	}
 }
