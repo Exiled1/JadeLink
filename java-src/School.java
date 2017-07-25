@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,10 +9,21 @@ public class School {
 	public School() {
 		
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
+		File tf = new File("Student Test data.csv");
+		Scanner in = new Scanner(tf);
 		ArrayList<Student> students = new ArrayList<Student>();
 		ArrayList<Class> classes = new ArrayList<Class>();
-		students.add(new Student(100000,10,"Russell","Chai"));
+		in.nextLine();
+		for(int i=0;i<1000;i++) {
+			//students.add(new Student(i+100000,9+(i%4),"Jason","Shi"));
+			String[] inp = in.nextLine().split(",");
+			students.add(new Student(Integer.parseInt(inp[0]),Integer.parseInt(inp[3]),inp[1],inp[2]));
+		}
+		for(int i=0;i<40;i++) {
+			classes.add(new Class(25,i+1,"JAVA"+(i+1),(i+1)%8,true,false));
+		}
+		/*students.add(new Student(100000,10,"Russell","Chai"));
 		students.add(new Student(100001,10,"Justin","Yang"));
 		for(int i=0;i<7;i++) {
 			classes.add(new Class(10,i+1,"JAVA",i+1,true,false));
@@ -37,7 +50,8 @@ public class School {
 		students.get(0).update();
 		students.get(1).update();
 		System.out.println(students.get(0).gpa);
-		System.out.println(students.get(1).gpa);
+		System.out.println(students.get(1).gpa);*/
+		
 		/*Scanner in = new Scanner(System.in);
 		while(true) {
 			String[] input = in.nextLine().split(" ");
