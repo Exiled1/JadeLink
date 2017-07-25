@@ -12,8 +12,8 @@ public class School {
 		ArrayList<Class> classes = new ArrayList<Class>();
 		students.add(new Student(100000,10,"Russell","Chai"));
 		students.add(new Student(100001,10,"Justin","Yang"));
-		for(int i=0;i<8;i++) {
-			classes.add(new Class(10,1,"JAVA",i+1,true,false));
+		for(int i=0;i<7;i++) {
+			classes.add(new Class(10,i+1,"JAVA",i+1,true,false));
 			classes.get(i).addStudent(students.get(0));
 			classes.get(i).addStudent(students.get(1));
 			classes.get(i).addTarget(new LearningTarget("Target 1",classes.get(0).num));
@@ -22,6 +22,14 @@ public class School {
 			classes.get(i).addGrade(100001, 94, "Homework");
 			classes.get(i).targets.get(0).average();
 		}
+		classes.add(new Class(10,8,"PE",8,false,true));
+		classes.get(7).addStudent(students.get(0));
+		classes.get(7).addStudent(students.get(1));
+		classes.get(7).addTarget(new LearningTarget("Target 1",classes.get(0).num));
+		classes.get(7).addAssignment(new Assignment("Homework",classes.get(0).num),0);
+		classes.get(7).addGrade(100000, 2, "Homework");
+		classes.get(7).addGrade(100001, 2, "Homework");
+		classes.get(7).targets.get(0).average();
 		for(int i=0;i<8;i++) {
 			students.get(0).classgrade(i);
 			students.get(1).classgrade(i);
