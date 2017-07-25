@@ -9,3 +9,5 @@ thing that we're using for the app: https://www.google.com/script/start/
 How to make stuff for a web app: https://codelabs.developers.google.com/codelabs/polymer-firebase-pwa/index.html?index=..%2F..%2Findex#0
 
 GitHub for dummies (Crash course): http://rogerdudler.github.io/git-guide/
+
+This tool is to quickly edit the manifest.json file: https://app-manifest.firebaseapp.com/
