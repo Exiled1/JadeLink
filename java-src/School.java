@@ -17,11 +17,17 @@ public class School {
 		in.nextLine();
 		for(int i=0;i<1000;i++) {
 			//students.add(new Student(i+100000,9+(i%4),"Jason","Shi"));
-			String[] inp = in.nextLine().split(",");
-			students.add(new Student(Integer.parseInt(inp[0]),Integer.parseInt(inp[3]),inp[1],inp[2]));
+			String[] input = in.nextLine().split(",");
+			students.add(new Student(Integer.parseInt(input[0]),Integer.parseInt(input[3]),input[1],input[2]));
+			for(int j=4;j<input.length;j++) {
+				if(input[j].equals("")) continue;
+				String[] inpu = input[j].split("/");
+				students.get(i).addAbsence(Integer.parseInt(inpu[0]), Integer.parseInt(inpu[1]), Integer.parseInt(inpu[2]), (i+j)%8+1, false);
+			}
 		}
+		in.close();
 		for(int i=0;i<40;i++) {
-			classes.add(new Class(25,i+1,"JAVA"+(i+1),(i+1)%8,true,false));
+			classes.add(new Class(25,i+1,"JAVA"+(i+1),(i)%8+1,true,false));
 		}
 		/*students.add(new Student(100000,10,"Russell","Chai"));
 		students.add(new Student(100001,10,"Justin","Yang"));

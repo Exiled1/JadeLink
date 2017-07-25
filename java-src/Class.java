@@ -25,7 +25,7 @@ public class Class extends Course {
 		students = new Student[num];
 		targets = new ArrayList<LearningTarget>();
 		//teacher.classes[period-1] = this;
-		System.out.println(this.toString());
+		System.out.println(this.toString() + ". Period: " + period + ". ID: " + id + ". ");
 	}
 	public void addGrade(int id, int grade, String name) {
 		for(int i=0;i<targets.size();i++) {

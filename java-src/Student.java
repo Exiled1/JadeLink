@@ -26,6 +26,7 @@ public class Student {
 		index = new int[8];
 		grades = new double[8];
 		letters = new String[8];
+		absence = new ArrayList<Absent>();
 		System.out.println("New Student: " + this.toString());
 	}
 	public double gpa() {
@@ -72,5 +73,6 @@ public class Student {
 	
 	public void addAbsence(int month, int day, int year, int period, boolean excused) {
 		absence.add(new Absent(month, day, year, period, excused));
+		System.out.println(fname + " " + lname + " had an absence on " + month + "/" + day + "/"+ year + ".");
 	}
 }
