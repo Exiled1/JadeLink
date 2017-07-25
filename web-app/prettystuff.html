@@ -2,6 +2,12 @@
 <html>
 <head>
 <style>
+
+.studyTable {
+	border-color: black
+}
+
+
 h2{
 	text-align:center;
 	font-size:36px;
@@ -17,10 +23,9 @@ h2{
 	color:white;
 }
 .teacherImages{
-	width:100px;
-	height:100px;
+	width:75px;
+	height:75px;
 	border-radius:50%;
-
 }
 .grades{
 	color:gray;
@@ -31,16 +36,14 @@ h2{
 	font-size:20px;
 }
 .studentImages{
-	width:200px;
-	height:200px;
+	width:125px;
+	height:125px;
 	border-radius:50%;
-
 }
 body {
     font-family: "Lato", Verdana;
 	background-color:#1B0340;
 }
-
 .sidenav {
     height: 100%;
     width: 0;
@@ -53,7 +56,6 @@ body {
     transition: 0.5s;
     padding-top: 60px;
 }
-
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -62,11 +64,9 @@ body {
     display: block;
     transition: 0.3s;
 }
-
 .sidenav a:hover, .offcanvas a:focus{
     color: #f1f1f1;
 }
-
 .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -74,12 +74,10 @@ body {
     font-size: 36px;
     margin-left: 50px;
 }
-
 #main {
     transition: margin-left .5s;
     padding: 16px;
 }
-
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -90,30 +88,40 @@ body {
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <!--<a href="#">Chemisty</a>-->
-  <button id = "chemButton" class = "menuButton">Chemisty</button>
+  <button id = "chemButton" class = "menuButton" onclick="chemClass()">Chemisty</button>
   <a href="#"></a>
-  <button id = "englishButton"class = "menuButton">English</button>
+  <button id = "englishButton"class = "menuButton" onclick="englishClass()">English</button>
   <a href="#"></a>
-  <button id = "spanishButton"class = "menuButton">Spanish</button>
+  <button id = "spanishButton"class = "menuButton" onclick="spanishClass()">Spanish</button>
   <a href="#"></a>
-  <button id = "statsButton"class = "menuButton">Statistics</button>
+  <button id = "statsButton"class = "menuButton" onclick="statsClass()">Statistics</button>
   <a href="#"></a>
-  <button id = "javaButton"class = "menuButton">Java</button>
+  <button id = "javaButton"class = "menuButton" onclick="javaClass()">Java</button>
   <a href="#"></a>
-  <button id = "historyButton"class = "menuButton">History</button>
+  <button id = "historyButton"class = "menuButton" onclick="javaClass()">History</button>
   <a href="#"></a>
-  <button id = "peButton"class = "menuButton">PE</button>
+  <button id = "peButton"class = "menuButton" onclick="peButton()">PE</button>
   <a href="#"></a>
-  <button id = "studyButton"class = "menuButton">Studyhall</button>
+  <button id = "studyButton"class = "menuButton" onclick="studyClass()">Studyhall</button>
   <a href="#"></a>	
-  <button id = "attendanceButton"class = "menuButton">Attendance</button>
 
 </div>
+
+
+
+
+
+
+
+
+
 
 <div id="main">
   <h2 style = "color:gray"> Synergy 2.0</h2>
   <span style="font-size:30px;cursor:pointer; color:gray;" onclick="openNav()">&#9776; Courses and Other Info</span>
+  <br>
+  <span style="font-size:30px;cursor:pointer;color:gray" onclick="openNav2()">&#9776; Student Info</span>
+  </br>
   <br align = "center">
 	<p align = "center"><img align = "center" src = "http://i2.kym-cdn.com/entries/icons/mobile/000/009/515/BadLuckBryan.jpg" class = "studentImages"></img></p>
   </br>
@@ -122,31 +130,41 @@ body {
   </br>
 </div>
 
+
+<div id="mySidenav2" class="sidenav" style=font-family:"Comic Sans MS";>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+  <a href="#">Attendance</a>
+  <a href="#">Report Card</a>
+
+</div>
+
+
+
 <table cellpadding="12" align = "center">
 	<tr>
 		<th>
-		<input type="image" src="https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" name="imageButton" class="teacherImages" onClick="myFunction()"/>
+		<input type="image" src="https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" name="imageButton" class="teacherImages" onClick="chemClass()"/>
 		</th>
 		<th>
-		<img src = "https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" class =teacherImages></img> 
+		<img src = "https://static1.squarespace.com/static/54dc2642e4b0469314195dca/t/55e25ffce4b02c93b1bfb1df/1440899069171/" class =teacherImages onclick="englishClass()"></img> 
 		</th>
 		<th>
-		<img src = "https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" class =teacherImages></img> 
+		<img src = "http://tobecomeateacher.org/wp-content/uploads/2015/07/shutterstock_262448087.jpg" class =teacherImages onclick="spanishClass()"></img> 
 		</th>
 		<th>
-		<img src = "https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" class =teacherImages></img> 
+		<img src = "http://www.politercume.com/wp-content/uploads/Almanca.jpg" class =teacherImages onclick="statsClass()"></img> 
 		</th>
 		<th>
-		<img src = "https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" class =teacherImages></img> 
+		<img src = "https://static1.squarespace.com/static/54dc2642e4b0469314195dca/t/581d39d2d2b85747b9d2adb0/1478310372081/Christopher_Lewis?format=500w" class =teacherImages onclick="javaClass()"></img> 
 		</th>
 		<th>
-		<img src = "https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" class =teacherImages></img> 
+		<img src = "https://az616578.vo.msecnd.net/files/2016/02/06/635903243401429014-1492924268_teachers.jpg" class =teacherImages onclick="historyClass()"></img> 
 		</th>
 		<th>
-		<img src = "https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" class =teacherImages></img> 
+		<img src = "http://media.syracuse.com/schools_impact/photo/amy-gbjpg-a071fb5d04bef09c.jpg" class =teacherImages onclick="peClass()"></img> 
 		</th>
 		<th>
-		<img src = "https://education.asu.edu/sites/default/files/styles/asunews_image_style/public/images_asunews/rayutter_headshot745x414.jpg?itok=TOdFhhMb" class =teacherImages></img> 
+		<img src = "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAJ-AAAAJDYwNzJiY2NjLTAwOGEtNGU4MC1hMmZlLTdjZGVjNDk0NmI3Nw.jpg" class =teacherImages onclick="studyClass()"></img> 
 		</th>
 	</tr>
 	<tr align = "center">
@@ -184,20 +202,59 @@ function openNav() {
     document.getElementById("main").style.marginLeft = "250px";
     document.body.style.backgroundColor = "#1B0340";
 }
-
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
     document.body.style.backgroundColor = "#1B0340";
 }
-function myFunction() {
+function chemClass() {
  var myWindow = window.open("", "MsgWindow", "width=600,height=400");
-    myWindow.document.write("<p>This is sample text</p>");
-
+    myWindow.document.write("<p>Chemistry Grades</p>");
 }
+function englishClass() {
+ var myWindow = window.open("", "MsgWindow", "width=600,height=400");
+    myWindow.document.write("<p>English Grades</p>");
+}
+function spanishClass() {
+ var myWindow = window.open("", "MsgWindow", "width=600,height=400");
+    myWindow.document.write("<p>Spanish Grades</p>");
+}
+function statsClass() {
+ var myWindow = window.open("", "MsgWindow", "width=600,height=400");
+    myWindow.document.write("<p>Statistics Grades</p>");
+}
+function javaClass() {
+ var myWindow = window.open("", "MsgWindow", "width=600,height=400");
+    myWindow.document.write("<p>Java Grades</p>");
+}
+function historyClass() {
+ var myWindow = window.open("", "MsgWindow", "width=600,height=400");
+    myWindow.document.write("<p>History Grades</p>");
+}
+function peClass() {
+ var myWindow = window.open("", "MsgWindow", "width=600,height=400");
+    myWindow.document.write("<p>PE Grades</p>");
+}
+function studyClass() {
+ var myWindow = window.open("", "MsgWindow", "width=600,height=400");
+    myWindow.document.write("<p>Studyhall Grades</p><table class=studyTable border='3' cellpadding='10'><tr><th>you have bad grades</th><th>your grades are OK</th></tr><tr><td>table testing</td><td>table testing</td></tr></table>");
+}
+
+
+
+function openNav2() {
+    document.getElementById("mySidenav2").style.width = "250px";
+}
+
+function closeNav2() {
+    document.getElementById("mySidenav2").style.width = "0";
+}
+
+
+
+
+
 </script>
      
 </body>
 </html> 
-
-
