@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Student {
 	double gpa;
 	int id;
@@ -8,6 +10,8 @@ public class Student {
 	int[] index;
 	School school;
 	double[] grades;
+	ArrayList<Absent>  
+	
 	String[] letters;
 	public String toString() {
 		return fname + " " + lname + ". ID: " + id + ". Grade: " + grade;
