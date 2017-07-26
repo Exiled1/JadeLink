@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
 <style>
-
-
-
 input[type=text], input[type=password] {
     width: 30%;
     padding: 12px 20px;
@@ -12,7 +9,6 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-
 button {
     background-color: #4CAF50;
     color: white;
@@ -22,32 +18,26 @@ button {
     cursor: pointer;
     width: 15%;
 }
-
 button:hover {
     opacity: 0.8;
 }
-
-
 .imgcontainer {
     text-align: center;
+	align: center; 
     margin: 24px 0 12px 0;
 }
-
 img.avatar {
     width: 20%;
     border-radius: 20%;
 }
-
 .container {
     padding: 16px;
 	text-align: center;
 }
-
 span.psw {
     float: right;
     padding-top: 16px;
 }
-
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {
@@ -75,7 +65,7 @@ span.psw {
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
     </br>    
-    <button style="background-color: blue" type="submit" onclick="window.open('file:///C:/Users/vasur/Desktop/Synergy/Synergy2.0/prettystuff.html')">Login</button>
+    <button style="background-color: blue" type="submit" onclick="window.open('https://synergy-55f2f.firebaseapp.com')">Login</button>
     <br>
 	<input type="checkbox" checked="checked"> Remember me
 	</br>
@@ -90,7 +80,6 @@ function validateForm() {
         return false;
     }
 }
-
 </script>
 
 </body>
