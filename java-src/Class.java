@@ -68,6 +68,24 @@ public class Class extends Course {
 		index++;
 		System.out.println(st.fname + " " + st.lname + " added to Class: " + name);
 	}
+	
+	//remove student from class
+	public void removeStudent(int id) {
+		boolean lol = false;
+		for(int i=0;i<index;i++) {
+			if(students[i].id==id) {
+				lol = true;
+				students[i].schedule[period-1] = null;
+				students[i].index[period-1] = -1;
+				System.out.println(students[i].fname + " " + students[i].lname + " was removed from " +this.name + ". ");
+			} else if(lol) {
+				students[i-1] = students[i];
+			}
+		}
+		students[index-1] = null;
+		index--;
+	}
+	
 	//Lists all students and grades
 	public void list() {
 		System.out.println(this.toString());
@@ -83,5 +101,61 @@ public class Class extends Course {
 				students[i].addAbsence(m, d, y, period, e);
 			}
 		}
+	}
+	//Sorts students in alphabetical order
+	public void sort() {
+		for(int i=0;i<index;i++) {
+			for(int j=0;j<i;j++) {
+				if(students[j].lname.compareTo(students[i].lname) > 0) {
+					Student swap = students[j];
+					students[j] = students[i];
+					students[i] = swap;
+					
+					for(int k=0;k<targets.size();k++) {
+						for(int l=0;l<targets.get(k).assignments.size();l++) {
+							System.out.println(targets.get(k).assignments.get(l).grades[j]);
+							System.out.println(targets.get(k).assignments.get(l).grades[i]);
+							double swapp = targets.get(k).assignments.get(l).grades[j];
+							targets.get(k).assignments.get(l).grades[j] = targets.get(k).assignments.get(l).grades[i];
+							targets.get(k).assignments.get(l).grades[i] = swapp;
+							System.out.println(targets.get(k).assignments.get(l).grades[j]);
+							System.out.println(targets.get(k).assignments.get(l).grades[i]);
+							//return;
+						}
+						double swapp = targets.get(k).grades[j];
+						targets.get(k).grades[j]=targets.get(k).grades[i];
+						targets.get(k).grades[i] = swapp;
+					}
+					students[j].classgrade(period-1);
+					students[i].classgrade(period-1);
+					//students[j].update();
+					//students[i].update();
+				} else if(students[j].lname.compareTo(students[i].lname) < 0) {
+				} else {
+					if(students[j].fname.compareTo(students[i].fname) > 0) {
+						Student swap = students[j];
+						students[j] = students[i];
+						students[i] = swap;
+						for(int k=0;k<targets.size();k++) {
+							for(int l=0;l<targets.get(k).assignments.size();l++) {
+								double swapp = targets.get(k).assignments.get(l).grades[j];
+								targets.get(k).assignments.get(l).grades[j] = targets.get(k).assignments.get(l).grades[i];
+								targets.get(k).assignments.get(l).grades[i] = swapp;
+							}
+							double swapp = targets.get(k).grades[j];
+							targets.get(k).grades[j]=targets.get(k).grades[i];
+							targets.get(k).grades[i] = swapp;
+						}
+					}
+				}
+			}
+		}
+		for(int i=0;i<targets.size();i++) {
+			targets.get(i).average();
+		}
+		for(int i=0;i<index;i++) {
+			students[i].index[period-1] = i;
+		}
+		System.out.println(this.name + " was sorted. ");
 	}
 }
