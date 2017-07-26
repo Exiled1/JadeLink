@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LearningTarget {
 	//learning target information
@@ -15,6 +16,7 @@ public class LearningTarget {
 	
 	//computing students grade for the learning target
 	public void average() {
+		Arrays.fill(grades, 0);
 		for(int i=0;i<assignments.size();i++) {
 			for(int j=0;j<grades.length;j++) {
 				grades[j]+=assignments.get(i).grades[j];

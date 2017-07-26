@@ -48,6 +48,7 @@ public class Student {
 	//updating students grades
 	public void update() {
 		for(int i=0;i<8;i++) {
+			System.out.println(schedule[i].toString());
 			if(schedule[i].percentage) {
 				if(grades[i] >= 90) letters[i] = "A";
 				else if(grades[i] >= 80) letters[i] = "B";
@@ -65,6 +66,22 @@ public class Student {
 		gpa();
 	}
 	
+	public void update2(int i) {
+		System.out.println(schedule[i].toString());
+		if(schedule[i].percentage) {
+			if(grades[i] >= 90) letters[i] = "A";
+			else if(grades[i] >= 80) letters[i] = "B";
+			else if(grades[i] >= 70) letters[i] = "C";
+			else if(grades[i] >= 60) letters[i] = "D";
+			else letters[i] = "F";
+		} else {
+			if(grades[i] >= 3.4) letters[i] = "A";
+			else if(grades[i] >= 2.8) letters[i] = "B";
+			else if(grades[i] >= 2.2) letters[i] = "C";
+			else if(grades[i] >= 1.6) letters[i] = "D";
+			else letters[i] = "F";
+		}
+	}
 	//calculating students grade by averaging all the learning targets
 	public double classgrade(int classnum) {
 		double grade=0;
@@ -81,5 +98,14 @@ public class Student {
 	public void addAbsence(int month, int day, int year, int period, boolean excused) {
 		absence.add(new Absent(month, day, year, period, excused));
 		System.out.println(fname + " " + lname + " had an absence on " + month + "/" + day + "/"+ year + ".");
+		if(absence.size() >= 3) {
+			System.out.println();
+			System.out.println(fname + " " + lname + " has 3 or more absences. Detention. ");
+			System.out.println();
+		}
+	}
+	
+	public void addClass(Class cl) {
+		cl.addStudent(this);
 	}
 }
