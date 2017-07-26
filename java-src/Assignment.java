@@ -16,7 +16,8 @@ public class Assignment {
 			if(id == target.class1.students[i].id) {
 				grades[i] = grade;
 				target.class1.students[i].classgrade(target.class1.period-1);
-				target.class1.students[i].update();
+				//target.class1.students[i].update();
+				break;
 			}
 		}
 	}

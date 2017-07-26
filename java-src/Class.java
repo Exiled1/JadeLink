@@ -113,24 +113,15 @@ public class Class extends Course {
 					
 					for(int k=0;k<targets.size();k++) {
 						for(int l=0;l<targets.get(k).assignments.size();l++) {
-							System.out.println(targets.get(k).assignments.get(l).grades[j]);
-							System.out.println(targets.get(k).assignments.get(l).grades[i]);
 							double swapp = targets.get(k).assignments.get(l).grades[j];
 							targets.get(k).assignments.get(l).grades[j] = targets.get(k).assignments.get(l).grades[i];
 							targets.get(k).assignments.get(l).grades[i] = swapp;
-							System.out.println(targets.get(k).assignments.get(l).grades[j]);
-							System.out.println(targets.get(k).assignments.get(l).grades[i]);
-							//return;
 						}
 						double swapp = targets.get(k).grades[j];
 						targets.get(k).grades[j]=targets.get(k).grades[i];
 						targets.get(k).grades[i] = swapp;
 					}
-					students[j].classgrade(period-1);
-					students[i].classgrade(period-1);
-					//students[j].update();
-					//students[i].update();
-				} else if(students[j].lname.compareTo(students[i].lname) < 0) {
+				}/* else if(students[j].lname.compareTo(students[i].lname) < 0) {
 				} else {
 					if(students[j].fname.compareTo(students[i].fname) > 0) {
 						Student swap = students[j];
@@ -147,7 +138,7 @@ public class Class extends Course {
 							targets.get(k).grades[i] = swapp;
 						}
 					}
-				}
+				}*/
 			}
 		}
 		for(int i=0;i<targets.size();i++) {
