@@ -11,3 +11,5 @@ How to make stuff for a web app: https://codelabs.developers.google.com/codelabs
 GitHub for dummies (Crash course): http://rogerdudler.github.io/git-guide/
 
 This tool is to quickly edit the manifest.json file: https://app-manifest.firebaseapp.com/
+
+Lazy af way to integrate authentication w/ firebaes: https://github.com/firebase/FirebaseUI
