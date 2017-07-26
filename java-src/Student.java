@@ -87,4 +87,8 @@ public class Student {
 			System.out.println();
 		}
 	}
+	
+	public void addClass(Class cl) {
+		cl.addStudent(this);
+	}
 }
