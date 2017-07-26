@@ -79,3 +79,8 @@ GitHub for dummies (Crash course): http://rogerdudler.github.io/git-guide/
 This tool is to quickly edit the manifest.json file: https://app-manifest.firebaseapp.com/
 
 Lazy af way to integrate authentication w/ firebaes: https://github.com/firebase/FirebaseUI
+
+How to embed java into HTML: 
+https://stackoverflow.com/questions/10964693/java-embedding-into-html
+
+https://stackoverflow.com/questions/985754/how-to-deploy-a-java-applet-for-todays-browsers-applet-embed-object
