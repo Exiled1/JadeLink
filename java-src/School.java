@@ -13,7 +13,7 @@ public class School {
 	//main function
 	public static void main(String[] args) throws FileNotFoundException {
 		//getting student information
-		File tf = new File("Student Test data.csv");
+		File tf = new File("StudentTestdata.csv");
 		Scanner in = new Scanner(tf);
 		ArrayList<Student> students = new ArrayList<Student>();
 		ArrayList<Class> classes = new ArrayList<Class>();
