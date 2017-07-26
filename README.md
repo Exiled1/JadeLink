@@ -84,3 +84,5 @@ How to embed java into HTML:
 https://stackoverflow.com/questions/10964693/java-embedding-into-html
 
 https://stackoverflow.com/questions/985754/how-to-deploy-a-java-applet-for-todays-browsers-applet-embed-object
+
+Transcompiling java into javascript: http://www.gwtproject.org/overview.html
