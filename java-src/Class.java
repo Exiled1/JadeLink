@@ -80,9 +80,19 @@ public class Class extends Course {
 				System.out.println(students[i].fname + " " + students[i].lname + " was removed from " +this.name + ". ");
 			} else if(lol) {
 				students[i-1] = students[i];
+				for(int j=0;j<targets.size();j++) {
+					for(int k=0;k<targets.get(j).assignments.size();k++) {
+						targets.get(j).assignments.get(k).grades[i-1] = targets.get(j).assignments.get(k).grades[i];
+					}
+				}
 			}
 		}
 		students[index-1] = null;
+		for(int j=0;j<targets.size();j++) {
+			for(int k=0;k<targets.get(j).assignments.size();k++) {
+				targets.get(j).assignments.get(k).grades[index-1] = 0;
+			}
+		}
 		index--;
 	}
 	

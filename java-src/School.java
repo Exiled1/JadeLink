@@ -52,7 +52,9 @@ public class School {
 		//classes.get(39).list();
 		classes.get(39).sort();
 		classes.get(39).list();
-		System.out.println("HI");
+		classes.get(39).removeStudent(994);
+		classes.get(39).removeStudent(1000);
+		classes.get(39).list();
 		/*students.add(new Student(100000,10,"Russell","Chai"));
 		students.add(new Student(100001,10,"Justin","Yang"));
 		for(int i=0;i<7;i++) {
