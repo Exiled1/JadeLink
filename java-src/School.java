@@ -55,6 +55,7 @@ public class School {
 		classes.get(39).removeStudent(994);
 		classes.get(39).removeStudent(1000);
 		classes.get(39).list();
+		students.get(998).list();
 		/*students.add(new Student(100000,10,"Russell","Chai"));
 		students.add(new Student(100001,10,"Justin","Yang"));
 		for(int i=0;i<7;i++) {
