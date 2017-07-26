@@ -65,7 +65,11 @@ public class Student {
 		}
 		gpa();
 	}
-	
+	public void list() {
+		for(int i=0;i<8;i++) {
+			System.out.println(fname + " " + lname + " has " + grades[i] + " in " + schedule[i] + " in Period " + (i+1));
+		}
+	}
 	public void update2(int i) {
 		System.out.println(schedule[i].toString());
 		if(schedule[i].percentage) {
