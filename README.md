@@ -70,6 +70,7 @@ As a template, below is going to be a basic manifest configuration.
 
  type: the mime-type for the icon source image.
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 thing that we're using for the app: https://www.google.com/script/start/
 
