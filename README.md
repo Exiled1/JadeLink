@@ -10,6 +10,7 @@ How this works for the actual web app is going to be like this.
 - Configuring the web app manifest.
 - Filling out 'sw-import.js'
 
+----------------------------------------------------------------------------------------------------------------------------------------
 
 Initializing firebase:
 
@@ -32,10 +33,7 @@ $ touch public/manifest.json
 $ touch public/note-app.html
 The actual app implementation is places as a Polymer custom element, it'll be called <note-app> in this example, which will be kept in an appropirately named HTML file
 
-After you
-
-
-
+----------------------------------------------------------------------------------------------------------------------------------------
 
 Manipulating the manifest.json file:
 As a template, below is going to be a basic manifest configuration.
