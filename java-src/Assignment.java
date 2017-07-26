@@ -4,13 +4,19 @@ public class Assignment {
 	LearningTarget target;
 	double[] grades;
 	int num;
-	public Assignment(String na,int n) {//, LearningTarget t) {
+	boolean isBehavior; //1 is test, 2 is homework, 3 is behavior
+	int weight;
+	public Assignment(String na, int n, boolean t, int w) {//, LearningTarget t) {
 		name = na;
 		num = n;
 		grades = new double[num];
+		isBehavior = t;
+		weight = w;
+		
 		//target = t;
 	}
 	//adding or changing a students grade on assigment
+	//goes through every single student, search for name, and then change
 	public void addGrade(int id, double grade) {
 		for(int i=0;i<num;i++) {
 			if(id == target.class1.students[i].id) {
