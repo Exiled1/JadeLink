@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>JadeLink Student - Overview</title>
+<title>JadeLink Student - Student Information</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -56,12 +56,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 .dropdown a:hover {background-color: #f1f1f1}
 
-.show {display:block;}
-.studentImages{
-	width:150px;
-	height:150px;
-	border-radius:50%;
-}
+	.show {display:block;}
+	.studentImages{
+		width:150px;
+		height:150px;
+		border-radius:50%;
+	}
 </style>
 
 <body class="w3-light-grey">
@@ -98,13 +98,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- All the side menu options, still need to be changed -->
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-		<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
+		<a href="studentPage.html" class="w3-bar-item w3-button"><i class="fa fa-users fa-fw"></i>  Overview</a>
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Messages</a>
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Course History</a>
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Course Request</a>
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Health</a>
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  School Information</a>
-    <a href="studentInformation.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  Student Information</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bank fa-fw"></i>  Student Information</a>
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  Test History</a>
   </div>
 </nav>
@@ -118,56 +118,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header class="w3-container" style="padding-top:22px">
-    <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+    <h5><b><i class="fa fa-bank"></i> Student Information</b></h5>
   </header>
 
-  <br align = "center">
-	<p align = "center"><img align = "center" src = "http://i2.kym-cdn.com/entries/icons/mobile/000/009/515/BadLuckBryan.jpg" class = "studentImages"></img></p>
   </br>
-
-
-
-
-
-
-  <div class="w3-container">
-    <!-- List of all the students and their grades -->
-    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
-	 <tr>
-        <th>Class</th>
-        <th>Grade</th>
-      </tr>
-      <tr>
-        <td>Lit and Comp 9</td>
-        <td><button onclick="openWindow()" class = "grades">B</button></td>
-      </tr>
-      <tr>
-        <td>Ap Statistics</td>
-        <td><button onclick="openWindow()" class = "grades">A</button></td>
-      </tr>
-      <tr>
-        <td>World History 9</td>
-        <td><button onclick="openWindow()" class = "grades">A</button></td>
-      </tr>
-      <tr>
-        <td>Java Programming DC</td>
-        <td><button onclick="openWindow()" class = "grades">A</button></td>
-      </tr>
-      <tr>
-        <td>Spanish II</td>
-        <td><button onclick="openWindow()" class = "grades">A</button></td>
-      </tr>
-      <tr>
-        <td>PE</td>
-        <td><button onclick="openWindow()" class = "grades">A</button></td>
-      </tr>
-	  <tr>
-        <td>Stem Chemisty</td>
-        <td><button onclick="openWindow()" class = "grades">B</button></td>
-      </tr>
-    </table><br>
-
-  </div>
   <hr>
 
 
