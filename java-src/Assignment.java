@@ -16,7 +16,7 @@ public class Assignment {
 		//target = t;
 	}
 	//adding or changing a students grade on assigment
-	//goes through every single student, search for name, and then change
+	//goes through every single student, search by id, and then change
 	public void addGrade(int id, double grade) {
 		for(int i=0;i<num;i++) {
 			if(id == target.class1.students[i].id) {
