@@ -15,7 +15,7 @@ public class Assignment {
 		
 		//target = t;
 	}
-	//adding or changing a students grade on assigment
+	//adding or changing a students grade on assignment
 	//goes through every single student, search by id, and then change
 	public void addGrade(int id, double grade) {
 		for(int i=0;i<num;i++) {
