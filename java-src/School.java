@@ -18,7 +18,7 @@ public class School {
 	//main function
 	public static void main(String[] args) throws FileNotFoundException, SQLException {
 		ArrayList<Student> students = new ArrayList<Student>();
-		ArrayList<Class> classes = new ArrayList<Class>();
+		ArrayList<StudentClass> classes = new ArrayList<StudentClass>();
 		Connection conn = null;
 		Statement stmt = null;
 		conn = DriverManager.getConnection(DB_URL,USER,PASS);

@@ -7,7 +7,7 @@ public class Student {
 	String password;
 	int grade;
 	String fname, lname;
-	Class[] schedule;
+	StudentClass[] schedule;
 	int[] index;
 	School school;
 	double[] grades;
@@ -25,7 +25,7 @@ public class Student {
 		grade = gr;
 		fname = f;
 		lname = l;
-		schedule = new Class[8];
+		schedule = new StudentClass[8];
 		index = new int[8];
 		grades = new double[8];
 		letters = new String[8];
@@ -89,7 +89,7 @@ public class Student {
 	//calculating students grade by averaging all the learning targets
 	public double classgrade(int classnum) {
 		double grade=0;
-		Class temp = schedule[classnum];
+		StudentClass temp = schedule[classnum];
 		for(int i=0;i<temp.targets.size();i++) {
 			grade+=temp.targets.get(i).grades[index[classnum]];
 		}
@@ -109,7 +109,7 @@ public class Student {
 		}
 	}
 	
-	public void addClass(Class cl) {
+	public void addClass(StudentClass cl) {
 		cl.addStudent(this);
 	}
 }

@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class LearningTarget {
 	//learning target information
-	Class class1;
+	StudentClass class1;
 	String name, description;
 	ArrayList<Assignment> assignments;
 	double[] grades;

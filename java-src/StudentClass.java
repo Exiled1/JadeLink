@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class Class extends Course {
+public class StudentClass extends Course {
 	//Class information
 	String name;
 	int id;
@@ -18,7 +18,7 @@ public class Class extends Course {
 	public String toString() {
 		return "Class: " + name;
 	}
-	public Class(int number, int idid, String nn,int p, boolean pe, boolean we) {
+	public StudentClass(int number, int idid, String nn,int p, boolean pe, boolean we) {
 		weighted = we;
 		percentage = pe;
 		period = p;
