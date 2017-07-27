@@ -2,24 +2,65 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.sql.*;
 
 public class School {
 	//school's name
 	String name;
+	String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+	static String DB_URL = "jdbc:mysql://localhost/EMP";
+	static String USER = "username";
+	static String PASS = "password";
 	
 	public School() {
 		
 	}
 	//main function
-	public static void main(String[] args) throws FileNotFoundException {
-		//getting student information
-		File tf = new File("StudentTestdata.csv");
-		Scanner in = new Scanner(tf);
+	public static void main(String[] args) throws FileNotFoundException, SQLException {
 		ArrayList<Student> students = new ArrayList<Student>();
 		ArrayList<Class> classes = new ArrayList<Class>();
+		Connection conn = null;
+		Statement stmt = null;
+		conn = DriverManager.getConnection(DB_URL,USER,PASS);
+		stmt = conn.createStatement();
+		String sql = "SELECT id, first, last, grade";
+		ResultSet rs = stmt.executeQuery(sql);
+		while(rs.next()) {
+			int id = rs.getInt("id");
+			int grade = rs.getInt("grade");
+			String first = rs.getString("first");
+			String last = rs.getString("last");
+			students.add(new Student(id,grade,first,last));
+		}
+		/*
+		//getting student information
+		File tf = new File("studentGradeData.csv");
+		Scanner in = new Scanner(tf);
+		
 		in.nextLine();
+		int ind = 0;
+		for(int i=0;i<40;i++) {
+			classes.add(new Class(25,i+1,"JAVA"+(i+1),1,true,false));
+			classes.get(i).addTarget(new LearningTarget("Target 1",classes.get(0).num));
+			classes.get(i).addAssignment(new Assignment("Homework",classes.get(0).num, false, 1),0);
+			classes.get(i).addTarget(new LearningTarget("Target 2",classes.get(0).num));
+			classes.get(i).addAssignment(new Assignment("Homework2",classes.get(0).num, false, 2),1);
+			classes.get(i).addAssignment(new Assignment("Homework3",classes.get(0).num, false, 1),1);
+			for(int j=0;j<25;j++) {
+				String[] input = in.nextLine().split(",");
+				System.out.println(ind+1);
+				students.add(new Student(Integer.parseInt(input[0]),Integer.parseInt(input[3]),input[1],input[2]));
+				classes.get(i).addStudent(students.get(ind));
+				classes.get(i).addGrade(ind+1, Integer.parseInt(input[4]), "Homework");
+				classes.get(i).addGrade(ind+1, Integer.parseInt(input[5]), "Homework2");
+				classes.get(i).addGrade(ind+1, Integer.parseInt(input[6]), "Homework3");
+				ind++;
+			}
+			classes.get(i).sort();
+			classes.get(i).list();
+		}
 		//getting all the students
-		for(int i=0;i<1000;i++) {
+		/*for(int i=0;i<1000;i++) {
 			//students.add(new Student(i+100000,9+(i%4),"Jason","Shi"));
 			String[] input = in.nextLine().split(",");
 			students.add(new Student(Integer.parseInt(input[0]),Integer.parseInt(input[3]),input[1],input[2]));
@@ -30,8 +71,9 @@ public class School {
 			}
 		}
 		in.close();
+		*/
 		//getting all the classes
-		for(int l=0;l<8;l++) {
+		/*for(int l=0;l<8;l++) {
 			for(int i=0;i<40;i++) {
 				classes.add(new Class(25,i+1,"JAVA"+(40*l+i+1),l+1,true,false));
 				classes.get(l*40+i).addTarget(new LearningTarget("Target 1",classes.get(0).num));
@@ -49,15 +91,16 @@ public class School {
 				classes.get(l*40+i).targets.get(1).average();
 				classes.get(l*40+i).list();
 			}
-		}
+		}*/
 		//classes.get(39).removeStudent(995);
 		//classes.get(39).list();
-		classes.get(39).sort();
+		/*classes.get(39).sort();
 		classes.get(39).list();
 		classes.get(39).removeStudent(994);
 		classes.get(39).removeStudent(1000);
 		classes.get(39).list();
 		students.get(998).list();
+		*/
 		/*students.add(new Student(100000,10,"Russell","Chai"));
 		students.add(new Student(100001,10,"Justin","Yang"));
 		for(int i=0;i<7;i++) {
