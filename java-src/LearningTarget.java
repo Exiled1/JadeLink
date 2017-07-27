@@ -7,11 +7,13 @@ public class LearningTarget {
 	String name, description;
 	ArrayList<Assignment> assignments;
 	double[] grades;
+	int weight;
 	
-	public LearningTarget(String n, int num) {
+	public LearningTarget(String n, int num /*int w*/) {
 		name = n;
 		grades = new double[num];
 		assignments = new ArrayList<Assignment>();
+		//weight = w;
 	}
 	
 	//computing students grade for the learning target

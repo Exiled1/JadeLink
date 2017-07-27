@@ -90,10 +90,12 @@ public class Student {
 	public double classgrade(int classnum) {
 		double grade=0;
 		StudentClass temp = schedule[classnum];
+		int sumOfWeights = 0;
 		for(int i=0;i<temp.targets.size();i++) {
-			grade+=temp.targets.get(i).grades[index[classnum]];
+			grade+=temp.targets.get(i).grades[index[classnum]] * temp.targets.get(i).weight;
+			sumOfWeights += temp.targets.get(i).weight;
 		}
-		grade/=temp.targets.size();
+		grade/=sumOfWeights;
 		grades[classnum] = grade;
 		return grade;
 	}
