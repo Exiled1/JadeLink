@@ -16,11 +16,12 @@ public class School {
 		
 	}
 	//main function
-	public static void main(String[] args) throws FileNotFoundException, SQLException {
+	public static void main(String[] args) throws FileNotFoundException, SQLException, ClassNotFoundException {
 		ArrayList<Student> students = new ArrayList<Student>();
 		ArrayList<StudentClass> classes = new ArrayList<StudentClass>();
 		Connection conn = null;
 		Statement stmt = null;
+		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(DB_URL,USER,PASS);
 		stmt = conn.createStatement();
 		String sql = "SELECT id, first, last, grade";
