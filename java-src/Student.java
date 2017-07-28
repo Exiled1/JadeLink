@@ -68,11 +68,13 @@ public class Student {
 		}
 		gpa();
 	}
+	//List classes & grades
 	public void list() {
 		for(int i=0;i<8;i++) {
 			System.out.println(fname + " " + lname + " has " + grades[i] + " in " + schedule[i] + " in Period " + (i+1));
 		}
 	}
+	//Update grades in a specific class
 	public void update2(int i) {
 		System.out.println(schedule[i].toString());
 		if(schedule[i].percentage) {
@@ -114,7 +116,8 @@ public class Student {
 			System.out.println();
 		}
 	}
-	
+	//Add class to this student
+	//Basically just adds this student to the class
 	public void addClass(StudentClass cl) {
 		cl.addStudent(this);
 	}
