@@ -19,7 +19,7 @@ public class School {
 		//ArrayList<StudentClass> classes = new ArrayList<StudentClass>();
 		MysqlDataSource mds = new MysqlDataSource();
 		mds.setUser("teammate");
-		mds.setPassword("TM:MySQL1224");
+		mds.setPassword("TM:MySQL420");
 		mds.setServerName("172.20.10.9"); //the IP address will be different depending on what network the server is on
 		mds.setPortNumber(3306);
 		mds.setDatabaseName("Synergy");
