@@ -17,15 +17,25 @@ public class School {
 	public static void main(String[] args) throws FileNotFoundException {
 		ArrayList<Student> students = new ArrayList<Student>();
 		//ArrayList<StudentClass> classes = new ArrayList<StudentClass>();
+		System.out.println("HI");
 		MysqlDataSource mds = new MysqlDataSource();
-		mds.setUser("teammate");
-		mds.setPassword("TM:MySQL420");
-		mds.setServerName("localhost");
+		System.out.println("Again");
+		mds.setUser("jonny_guo");
+		System.out.println("Three");
+		mds.setPassword("anythingisfine");
+		System.out.println("four");
+		mds.setServerName("172.20.10.9");
+		System.out.println("cinco");
 		mds.setPortNumber(3306);
+		System.out.println("six");
 		mds.setDatabaseName("Synergy");
+		System.out.println("seveN");
 		try {
-			Connection conn = mds.getConnection();
+			Connection conn = mds.getConnection("jonny_guo","anythingisfine");
+			//Connection conn = mds.getConnection();
+			System.out.println("EighT");
 			Statement stmt = conn.createStatement();
+			System.out.println("niNe");
 			ResultSet rs = stmt.executeQuery("SELECT student_id, enrollment_year, first_name, last_name FROM student_info");
 			while (rs.next()) {
 				int id = rs.getInt("student_id");
