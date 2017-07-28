@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class StudentClass extends Course {
+public class StudentClass {//extends Course {
 	//Class information
 	String name;
 	int id;
