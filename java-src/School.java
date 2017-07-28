@@ -8,9 +8,9 @@ public class School {
 	//school's name
 	String name;
 	String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static String DB_URL = "jdbc:mysql://localhost:3306/Synergy";
-	static String USER = ""; //ENTER USERNAME LATER
-	static String PASS = ""; //ENTER PASSWORD LATER
+	static String DB_URL = "jdbc:mysql://172.30.16.231:3306/Synergy";
+	static String USER = "jonny_guo"; //ENTER USERNAME LATER
+	static String PASS = "anythingisfine"; //ENTER PASSWORD LATER
 	
 	public School() {
 		
@@ -21,13 +21,19 @@ public class School {
 		ArrayList<StudentClass> classes = new ArrayList<StudentClass>();
 		Connection conn = null;
 		Statement stmt = null;
+		System.out.println("HI");
 		try {
+			System.out.println("HI2");
 		    Class.forName("com.mysql.jdbc.Driver").newInstance();
+		    System.out.println("Fast");
             conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            System.out.println("Slow");
             stmt = conn.createStatement();
             String sql = "SELECT student_id, first_name, last_name FROM student_info";
             ResultSet rs = stmt.executeQuery(sql);
+            System.out.println("HI3");
             while(rs.next()) {
+            	System.out.println("BYE");
                 int id = rs.getInt("student_id");
                 int grade = 9;
                 String first = rs.getString("first_name");
