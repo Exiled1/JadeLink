@@ -12,7 +12,7 @@ public class Assignment {
 		grades = new double[num];
 		isBehavior = t;
 		weight = w;
-		
+
 		//target = t;
 	}
 	//adding or changing a students grade on assignment
