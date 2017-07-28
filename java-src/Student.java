@@ -35,20 +35,23 @@ public class Student {
 	//compute gpa
 	public double gpa() {
 		gpa = 0;
+		int cls = 0;
 		for(int i=0;i<8;i++) {
+			if(letters[i].equals(null)) continue;
 			if(letters[i].equals("A")) gpa+=4;
 			if(letters[i].equals("B")) gpa+=3;
 			if(letters[i].equals("C")) gpa+=2;
 			if(letters[i].equals("D")) gpa+=1;
 			if(schedule[i].weighted) gpa++;
+			cls++;
 		}
-		gpa/=8;
+		gpa/=cls;
 		return gpa;
 	}
 	//updating students grades
 	public void update() {
 		for(int i=0;i<8;i++) {
-			System.out.println(schedule[i].toString());
+			if(schedule[i].equals(null)) continue;
 			if(schedule[i].percentage) {
 				if(grades[i] >= 90) letters[i] = "A";
 				else if(grades[i] >= 80) letters[i] = "B";
