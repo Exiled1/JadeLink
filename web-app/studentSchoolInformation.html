@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="icon" href="/res/logo.png">
+<link rel="icon" href="/logo.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -17,8 +17,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	color:white;
 }
 .logo{
-	width:30px;
-	height:30px;
+	width:25px;
+	height:25px;
 	border-radius:50%;
 }
 .dropbtn {
@@ -57,6 +57,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		height:150px;
 		border-radius:50%;
 	}
+
+.schoolInfoImage {
+	vertical-align: "center";
+	height: 600px;
+	width: 800px;
+}
 </style>
 
 <body class="w3-light-grey">
@@ -64,7 +70,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right">JadeLink Student <img src = "/res/logo.png" class = "logo"></img></span>
+  <span class="w3-bar-item w3-right">JadeLink Student<img src = "/logo.png" class = "logo"></img></span>
 </div>
 
 <!-- Sidebar/menu -->
@@ -120,7 +126,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <hr>
 
 
+	<div>
+	<p align="center"><img align="center" src="schoolInfo.png" alt="schoolInfo" class="schoolInfoImage"></img></p>
 
+	</div>
 
 
 
@@ -178,7 +187,7 @@ window.onclick = function(event) {
 	projectId: "synergy-55f2f",
 	storageBucket: "synergy-55f2f.appspot.com",
 	messagingSenderId: "770327766142"
-  };	
+  };
   firebase.initializeApp(config);
 </script>
 <script>
@@ -202,7 +211,7 @@ window.onclick = function(event) {
 	  document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
 	}
   });
-</script>	
+</script>
 <script>
 document.getElementById('signout').addEventListener('click', signOut, false);
 window.onload = function(){
@@ -217,8 +226,8 @@ function signOut(){
 	});
 }
 var user = firebase.auth().currentUser;
-var name, email, photoUrl, uid, emailVerified;	
-function initPage(){	
+var name, email, photoUrl, uid, emailVerified;
+function initPage(){
 	firebase.auth().onAuthStateChanged(function(user) {
 	  if(user) {
 		  name = user.displayName.substring(1);
