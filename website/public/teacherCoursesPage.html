@@ -112,7 +112,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- All the side menu options, still need to be changed -->
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="teacgerPage.html" class="w3-bar-item w3-button w3-padding "><i class="fa fa-users fa-fw"></i>  Overview</a>
+    <a href="teacherPage.html" class="w3-bar-item w3-button w3-padding "><i class="fa fa-users fa-fw"></i>  Overview</a>
     <a href="teacherStudentPage.html" class="w3-bar-item w3-button w3-padding "><i class="fa fa-eye fa-fw"></i>  Students</a>
     <a href="#" class="w3-bar-item w3-button w3-padding w3-green" ><i class="fa fa-users fa-fw"></i>  Courses</a>
     <a href="teacherCalendarPage.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Calendar</a>
@@ -224,7 +224,72 @@ window.onclick = function(event) {
   }
 }
 </script>
+<script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+	apiKey: "AIzaSyDpiSFR49X-0u8Z-Nlg2Z0esus8iltGDx0",
+	authDomain: "synergy-55f2f.firebaseapp.com",
+	databaseURL: "https://synergy-55f2f.firebaseio.com",
+	projectId: "synergy-55f2f",
+	storageBucket: "synergy-55f2f.appspot.com",
+	messagingSenderId: "770327766142"
+  };	
+  firebase.initializeApp(config);
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+	// // ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥
+	// // The Firebase SDK is initialized and available here!
+	//
+	// firebase.auth().onAuthStateChanged(user => { });
+	// firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+	// firebase.messaging().requestPermission().then(() => { });
+	// firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+	//
+	// // ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥
 
+	try {
+	  let app = firebase.app();
+	  let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+	  document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+	} catch (e) {
+	  console.error(e);
+	  document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+	}
+  });
+</script>	
+<script>
+document.getElementById('signout').addEventListener('click', signOut, false);
+window.onload = function(){
+initPage();
+}
+
+function signOut(){
+	firebase.auth().signOut().then(function() {
+	  console.log('Signed Out');
+	}, function(error) {
+	  console.error('Sign Out Error', error);
+	});
+}
+var user = firebase.auth().currentUser;
+var name, email, photoUrl, uid, emailVerified;	
+function initPage(){	
+	firebase.auth().onAuthStateChanged(function(user) {
+	  if(user) {
+		  name = user.displayName.substring(1);
+		  email = user.email;
+		  photoUrl = user.photoURL;
+		  emailVerified = user.emailVerified;
+		  uid = user.uid;
+		  document.getElementById("name").innerHTML=name;
+		  document.getElementById("profilePic").src = photoUrl;
+		  document.getElementById("bigProfilePic").src = photoUrl;
+	  }else{
+		window.location.replace('/index.html');
+	  }
+	});
+}
+</script>
 </body>
 </html>
-s
