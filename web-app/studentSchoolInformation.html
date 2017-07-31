@@ -72,7 +72,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container w3-row">
     <div class="w3-col s4">
 	<div class="dropdown">
-	<input type="image"  id ="profilePic" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" class="dropbtn" onClick="dropDown()"/>
+	<input type="image" id="profilePic" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" class="dropbtn" onClick="dropDown()"/>
 
   <div id="myDropdown" class="dropdown-content">
     <a id="signout">Sign Out</a>
@@ -82,7 +82,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
     <div class="w3-col s8 w3-bar">
 	<!-- Welcome -->
-      <span>Welcome, <strong id ="Name" >Student Name</strong></span><br>
+      <span>Welcome, <strong id ="name">Student Name</strong></span><br>
     </div>
 
   </div>
@@ -97,8 +97,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		<a href="studentMessages.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Messages</a>
 		<a href="studentCourseHistory.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Course History</a>
 		<a href="studentCourseRequest.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Course Request</a>
-		<a href="studentHealth.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Health</a>
-		<a href="studentSchoolInformation.html" class="w3-bar-item w3-button w3-padding  w3-green"><i class="fa fa-bell fa-fw"></i>  School Information</a>
+		<a href="studentHealth.html" class="w3-bar-item w3-button w3-padding w3-green"><i class="fa fa-diamond fa-fw"></i>  Health</a>
+		<a href="studentSchoolInformation.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  School Information</a>
 		<a href="studentInformation.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  Student Information</a>
 		<a href="studentTestHistory.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  Test History</a>
   </div>
@@ -178,7 +178,7 @@ window.onclick = function(event) {
 	projectId: "synergy-55f2f",
 	storageBucket: "synergy-55f2f.appspot.com",
 	messagingSenderId: "770327766142"
-  };	
+  };
   firebase.initializeApp(config);
 </script>
 <script>
@@ -202,7 +202,7 @@ window.onclick = function(event) {
 	  document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
 	}
   });
-</script>	
+</script>
 <script>
 document.getElementById('signout').addEventListener('click', signOut, false);
 window.onload = function(){
@@ -217,8 +217,8 @@ function signOut(){
 	});
 }
 var user = firebase.auth().currentUser;
-var name, email, photoUrl, uid, emailVerified;	
-function initPage(){	
+var name, email, photoUrl, uid, emailVerified;
+function initPage(){
 	firebase.auth().onAuthStateChanged(function(user) {
 	  if(user) {
 		  name = user.displayName.substring(1);
