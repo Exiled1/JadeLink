@@ -1,21 +1,21 @@
 # JadeLink
 
-This is a revamp of the regular StudentVue web application, there are 4 mini teams to the mega team, and there are a couple large portions to tackle, those being the database, how to move info from the database to the web application.
+This is a revamp of the regular StudentVue web application. The whole team comprises of four smaller teams. Some specific tasks for the mini-teams include working with the database, Java programming, front-end/back-end development, and creating the website itself.
 
-How this works for the actual web app is going to be like this.
+Steps:
 
-- We need to initialize firebase, then actually install the sample code to work off of
-- Initialize the project folder.
+- Initialize Firebase, then actually install the sample code to work off of
+- Initialize the project folder
 - Start the development server
-- Configuring the web app manifest.
-- Filling out 'sw-import.js'
+- Configure the web app manifest
+- Fill out 'sw-import.js'
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-Initializing firebase:
+Initializing Firebase:
 
-- For the first steps we actually need to initialize firebase. To do that you need to go to the directory that contains the project and run '$ firebase init' inside of the directory that contains the project.
-- After you type that it'll ask you what features you'd actually like to install. (Features, if you will) You can choose what you'd actually like to have for it.
+- For the first steps we actually need to initialize firebase. To do that, you need to go to the directory that contains the project and run '$ firebase init' inside of the directory that contains the project.
+- After you type that, it'll ask you what features you'd actually like to install. (Features, if you will) You can choose what you'd actually like to have for it.
 - You need to select the actual firebase project that you (I) created (P.S. when firebase asks about the Firebase Database rules, just choose the default "database.rules.json" file.)
 - Don't configure the project as a single-page app (In other words say no for the secondary thing, the one after it asks if youd like to use it as your public directory)
 
@@ -70,19 +70,19 @@ As a template, below is going to be a basic manifest configuration.
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
-thing that we're using for the app: https://www.google.com/script/start/
+Thing that we're using for the app: https://www.google.com/script/start/
 
 How to make stuff for a web app: https://codelabs.developers.google.com/codelabs/polymer-firebase-pwa/index.html?index=..%2F..%2Findex#0
 
-GitHub for dummies (Crash course): http://rogerdudler.github.io/git-guide/
+GitHub for Dummies (crash course): http://rogerdudler.github.io/git-guide/
 
-This tool is to quickly edit the manifest.json file: https://app-manifest.firebaseapp.com/
+Use this tool to quickly edit the manifest.json file: https://app-manifest.firebaseapp.com/
 
-Lazy af way to integrate authentication w/ firebaes: https://github.com/firebase/FirebaseUI
+Lazy af way to integrate authentication w/ Firebase: https://github.com/firebase/FirebaseUI
 
-How to embed java into HTML: 
+How to embed Java into HTML: 
 https://stackoverflow.com/questions/10964693/java-embedding-into-html
 
 https://stackoverflow.com/questions/985754/how-to-deploy-a-java-applet-for-todays-browsers-applet-embed-object
 
-Transcompiling java into javascript: http://www.gwtproject.org/overview.html
+Transcompiling Java into Javascript: http://www.gwtproject.org/overview.html
