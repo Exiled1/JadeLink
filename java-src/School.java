@@ -1,46 +1,50 @@
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
-//import java.io.File;
+
 import java.io.FileNotFoundException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
+
+//import java.io.File;
 //import java.util.Scanner;
-import java.sql.*;
 
 public class School {
 
-	//String name; //school's name
-	
-	public School() {
-		
-	}
+    //String name; //school's name
 
-	//main function
-	public static void main(String[] args) throws FileNotFoundException {
-		ArrayList<Student> students = new ArrayList<Student>();
-		//ArrayList<StudentClass> classes = new ArrayList<StudentClass>();
-		MysqlDataSource mds = new MysqlDataSource();
-		mds.setUser("teammate");
-		mds.setPassword("TM:MySQL420");
-		mds.setServerName("172.20.10.9"); //the IP address will be different depending on what network the server is on
-		mds.setPortNumber(3306);
-		mds.setDatabaseName("Synergy");
-		try {
-			Connection conn = mds.getConnection();
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT student_id, enrollment_year, first_name, last_name FROM student_info");
-			while (rs.next()) {
-				int id = rs.getInt("student_id");
-				int grade = 2017 - Integer.parseInt(rs.getString("enrollment_year"));
-				String first = rs.getString("first_name");
-				String last = rs.getString("last_name");
-				students.add(new Student(id, grade, first, last));
-			}
-			rs.close();
-			stmt.close();
-			conn.close();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		/*
+    public School() {
+
+    }
+
+    //main function
+    public static void main(String[] args) throws FileNotFoundException {
+        ArrayList<Student> students = new ArrayList<Student>();
+        //ArrayList<StudentClass> classes = new ArrayList<StudentClass>();
+        MysqlDataSource mds = new MysqlDataSource();
+        mds.setUser("teammate");
+        mds.setPassword("TM:MySQL420");
+        mds.setServerName("172.20.10.9"); //the IP address will be different depending on what network the server is on
+        mds.setPortNumber(3306);
+        mds.setDatabaseName("JadeLink");
+        try {
+            Connection conn = mds.getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT student_id, enrollment_year, first_name, last_name FROM student_info");
+            while (rs.next()) {
+                int id = rs.getInt("student_id");
+                int grade = 2017 - Integer.parseInt(rs.getString("enrollment_year"));
+                String first = rs.getString("first_name");
+                String last = rs.getString("last_name");
+                students.add(new Student(id, grade, first, last));
+            }
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        /*
 		//getting student information
 		File tf = new File("studentGradeData.csv");
 		Scanner in = new Scanner(tf);
@@ -80,7 +84,7 @@ public class School {
 		}
 		in.close();
 		*/
-		//getting all the classes
+        //getting all the classes
 		/*for(int l=0;l<8;l++) {
 			for(int i=0;i<40;i++) {
 				classes.add(new Class(25,i+1,"JAVA"+(40*l+i+1),l+1,true,false));
@@ -100,8 +104,8 @@ public class School {
 				classes.get(l*40+i).list();
 			}
 		}*/
-		//classes.get(39).removeStudent(995);
-		//classes.get(39).list();
+        //classes.get(39).removeStudent(995);
+        //classes.get(39).list();
 		/*classes.get(39).sort();
 		classes.get(39).list();
 		classes.get(39).removeStudent(994);
@@ -165,5 +169,5 @@ public class School {
 				
 			}
 		}*/
-	}
+    }
 }
