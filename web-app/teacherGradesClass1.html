@@ -104,8 +104,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	
     <button class="w3-button"><i class="fa fa-diamond fa-fw"></i>  Grades</button>
     <div class="w3-dropdown-content w3-bar-block">
-      <a href="teacherGradesClass1.html" class="w3-bar-item w3-button">AP Statistics</a>
-      <a href="teacherGradeClass2.html" class="w3-bar-item w3-button">Advanced Algebra II</a>
+      <a href="#" class="w3-bar-item w3-button">AP Statistics</a>
+      <a href="teacherGradesClass2.html" class="w3-bar-item w3-button">Advanced Algebra II</a>
     </div>
   </div> 
 </div>
@@ -125,10 +125,43 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header class="w3-container" style="padding-top:22px">
-    <h5><b><i class="fa fa-dashboard"></i> Grades</b></h5>
+    <h5><b><i class="fa fa-dashboard"></i> AP Statistics Grades</b></h5>
   </header>
   <!-- Widgets at top, still need to be turned into buttons -->
-  
+    <div class="w3-container">
+    <!-- List of all the students and their grades -->
+    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+	 <tr>
+        <th>Student Name</th>
+        <th>Grade</th>
+      </tr>
+      <tr>
+        <td>Kevin Men</td>
+        <td><button onclick="openWindow()" class = "grades">95%</button></td>
+      </tr>
+      <tr>
+        <td>Russell Chai</td>
+        <td><button onclick="openWindow()" class = "grades">95%</button></td>
+      </tr>
+      <tr>
+        <td>Justin Yang</td>
+        <td><button onclick="openWindow()" class = "grades">95%</button></td>
+      </tr>
+      <tr>
+        <td>Connor Shu</td>
+        <td><button onclick="openWindow()" class = "grades">95%</button></td>
+      </tr>
+      <tr>
+        <td>Jonathan Guo</td>
+        <td><button onclick="openWindow()" class = "grades">95%</button></td>
+      </tr>
+      <tr>
+        <td>Jason Shi</td>
+        <td><button onclick="openWindow()" class = "grades">85%</button></td>
+      </tr>
+    </table><br>
+    
+  </div>
 
 
   
