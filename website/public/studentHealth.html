@@ -57,25 +57,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		height:150px;
 		border-radius:50%;
 	}
-.studentImages{
-	width:150px;
-	height:150px;
-	border-radius:50%;
-}
-.signOut{
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-	padding:5px;
-	position: absolute;
-	right: 500x;
-	left: 50x;
-	top: 5x;
-}
-.signOut:hover {
-    opacity: 0.8;
+	
+.healthImage {
+	vertical-align: "center";
+	height: 600px;
+	width: 800px;
 }
 </style>
 
@@ -94,14 +80,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	<div class="dropdown">
 	<input type="image" id="profilePic" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" class="dropbtn" onClick="dropDown()"/>
 
+  <div id="myDropdown" class="dropdown-content">
+    <a id="signout">Sign Out</a>
+  </div>
 </div>
 
     </div>
     <div class="w3-col s8 w3-bar">
 	<!-- Welcome -->
       <span>Welcome, <strong id ="name">Student Name</strong></span><br>
-	  <h1></h1>
-	  <h2 style="text-align='right';font-size:15px"><a id="signout" class="signOut">Sign Out</a></h2>
     </div>
 
   </div>
@@ -139,7 +126,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <hr>
 
 
+	<div>
+	<p align="center"><img align="center" src="HealthRecord.png" alt="healthRecord" class="healthImage"></img></p>
 
+	</div>
 
 
 
