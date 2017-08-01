@@ -1,4 +1,4 @@
-# Synergy2.0
+# JadeLink
 
 This is a revamp of the regular StudentVue web application, there are 4 mini teams to the mega team, and there are a couple large portions to tackle, those being the database, how to move info from the database to the web application.
 
