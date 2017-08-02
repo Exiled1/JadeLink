@@ -16,7 +16,6 @@ public class School {
     public School() {
 
     }
-
     //main function
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Student> students = new ArrayList<Student>();
