@@ -70,6 +70,7 @@ public class StudentClass {//extends Course {
 	}
 	
 	//remove student from class
+	//also has to remove the student's grades
 	public void removeStudent(int id) {
 		boolean lol = false;
 		for(int i=0;i<index;i++) {
@@ -112,7 +113,7 @@ public class StudentClass {//extends Course {
 			}
 		}
 	}
-	//Sorts students in alphabetical order
+	//Sorts students in alphabetical order by last name
 	public void sort() {
 		for(int i=0;i<index;i++) {
 			for(int j=0;j<i;j++) {

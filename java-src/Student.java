@@ -32,7 +32,7 @@ public class Student {
 		absence = new ArrayList<Absent>();
 		System.out.println("New Student: " + this.toString());
 	}
-	//compute gpa
+	//compute gpa of the student
 	public double gpa() {
 		gpa = 0;
 		int cls = 0;
@@ -68,7 +68,7 @@ public class Student {
 		}
 		gpa();
 	}
-	//List classes & grades
+	//List all classes & grades
 	public void list() {
 		for(int i=0;i<8;i++) {
 			System.out.println(fname + " " + lname + " has " + grades[i] + " in " + schedule[i] + " in Period " + (i+1));
