@@ -11,3 +11,7 @@ Rudy: Yesterday- Literally just making all of our java into JS....
 Russell:
 	Yesterday Trying to get GWT to work but its not
 	Today Sry guys lol getting permit so probs cant do much ill try to work if i can
+
+Jonathan: 
+	Yesterday trying to get jsweet to work but its not
+	Today probably will comment my code
