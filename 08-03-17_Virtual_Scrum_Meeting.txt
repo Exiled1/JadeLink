@@ -15,3 +15,7 @@ Russell:
 Jonathan: 
 	Yesterday trying to get jsweet to work but its not
 	Today probably will comment my code
+	
+Kevin:
+	Yesterday: Continued to work on teacher interface
+	Today: Going to comment all the code to make it easier to understand
