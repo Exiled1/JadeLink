@@ -6,6 +6,8 @@ Connor:
 
 Rudy: Yesterday- Literally just making all of our java into JS....
       Today- PLEASE COMMENT YOUR CODE, PLEASE PLEASE PLEASE, my sanity cant handle translating more code without comments... PLEASE, I've been up for 20 hours, I need you guys to comment your java code...................
+      
+      GUYS: HOW DO YOU CONNECT TO THE SQL SERVER RUSSELL PLEASE RESPOND!!!!
       TL;DR: I'm making java into javascript (plz comment code)
 
 Russell:
