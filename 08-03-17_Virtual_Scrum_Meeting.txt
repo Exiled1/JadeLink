@@ -1,0 +1,6 @@
+Hey guys this is Connor. I'm going to be working from home today as it's going to be extremely hot later today. Many of the other group members are working from home as well, so I am leaving this document here for people to record what they did yesterday and what they are going to do today.
+
+Connor:
+	Yesterday- Learned about PreparedStatements
+	Today- Going to implement them in the program
+
