@@ -1,0 +1,16 @@
+insert into course_info (course_id, course_name, weighted, subject) values (1,'Lit and Comp 9',0,'English');
+insert into course_info (course_id, course_name, weighted, subject) values (2,'AP Statistics',1,'Math');
+insert into course_info (course_id, course_name, weighted, subject) values (3,'Health 1',0,'Health');
+insert into course_info (course_id, course_name, weighted, subject) values (4,'Java Programming DC',1,'Computer Science');
+insert into course_info (course_id, course_name, weighted, subject) values (5,'Spanish II',0,'Foreign Language');
+insert into course_info (course_id, course_name, weighted, subject) values (6,'STEM Chemistry',0,'Science');
+insert into course_info (course_id, course_name, weighted, subject) values (7,'World History 9',0,'Social Studies');
+insert into course_info (course_id, course_name, weighted, subject) values (8,'Calculus 1 DC',1,'Math');
+insert into course_info (course_id, course_name, weighted, subject) values (9,'IB Chemistry SL',1,'Science');
+insert into course_info (course_id, course_name, weighted, subject) values (10,'Precalculus',0,'Math');
+insert into course_info (course_id, course_name, weighted, subject) values (11,'AP Calculus AB',1,'Math');
+insert into course_info (course_id, course_name, weighted, subject) values (12,'AP Environ Science',1,'Science');
+insert into course_info (course_id, course_name, weighted, subject) values (13,'AP US History',1,'Social Studies');
+insert into course_info (course_id, course_name, weighted, subject) values (14,'Japanese I',0,'Foreign Language');
+insert into course_info (course_id, course_name, weighted, subject) values (15,'Lit and Comp 10',0,'English');
+insert into course_info (course_id, course_name, weighted, subject) values (16,'Fitness/Team Ac',0,'PE');
