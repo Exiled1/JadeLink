@@ -16,18 +16,18 @@ public class School {
     public School() {
 
     }
-    //main function
+    //main function ****
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Student> students = new ArrayList<Student>();
         //ArrayList<StudentClass> classes = new ArrayList<StudentClass>();
-        MysqlDataSource mds = new MysqlDataSource();
-        mds.setUser("teammate");
-        mds.setPassword("TM:MySQL420");
-        mds.setServerName("172.20.10.9"); //the IP address will be different depending on what network the server is on
-        mds.setPortNumber(3306);
-        mds.setDatabaseName("JadeLink");
+        MysqlDataSource myDataSource = new MysqlDataSource();
+        myDataSource.setUser("teammate");
+        myDataSource.setPassword("TM:MySQL420");
+        myDataSource.setServerName("172.20.10.9"); //the IP address will be different depending on what network the server is on
+        myDataSource.setPortNumber(3306);
+        myDataSource.setDatabaseName("JadeLink");
         try {
-            Connection conn = mds.getConnection();
+            Connection conn = myDataSource.getConnection();
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT student_id, enrollment_year, first_name, last_name FROM student_info");
             while (rs.next()) {
@@ -47,7 +47,7 @@ public class School {
 		//getting student information
 		File tf = new File("studentGradeData.csv");
 		Scanner in = new Scanner(tf);
-		
+
 		in.nextLine();
 		int ind = 0;
 		for(int i=0;i<40;i++) {
@@ -140,7 +140,7 @@ public class School {
 		students.get(1).update();
 		System.out.println(students.get(0).gpa);
 		System.out.println(students.get(1).gpa);*/
-		
+
 		/*Scanner in = new Scanner(System.in);
 		while(true) {
 			String[] input = in.nextLine().split(" ");
@@ -165,7 +165,7 @@ public class School {
 				for(int i=0;i<classes.size();i++) {
 					if(classes.get(i).id == tempid) index = i;
 				}
-				
+
 			}
 		}*/
     }
