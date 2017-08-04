@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>JadeLink</title>
+<title>JadeLink - Grades</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -60,6 +60,21 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .dropdown a:hover {background-color: #f1f1f1}
 
 .show {display:block;}
+.signOut{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+	padding:5px;
+	position: absolute;
+	right: 500x;
+	left: 50x;
+	top: 5x;
+}
+.signOut:hover {
+    opacity: 0.8;
+}
 </style>
 
 <body class="w3-light-grey">
@@ -77,15 +92,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	<div class="dropdown">
 	<input type="image" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" class="dropbtn" onClick="dropDown()"/>
 
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#home">Sign Out</a>
-  </div>
 </div>
       
     </div>
     <div class="w3-col s8 w3-bar">
 	<!-- Welcome -->
       <span>Welcome, <strong>Teacher Name</strong></span><br>
+	  <h1></h1>
+	  <h2 style="text-align='right';font-size:15px"><a id="signout" class="signOut">Sign Out</a></h2>
     </div>
 
   </div>
@@ -222,7 +236,73 @@ window.onclick = function(event) {
   }
 }
 </script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBH1w_hx29plsH93-7_lTl_rq0hCma9p0o",
+    authDomain: "jadelink-d3ba0.firebaseapp.com",
+    databaseURL: "https://jadelink-d3ba0.firebaseio.com",
+    projectId: "jadelink-d3ba0",
+    storageBucket: "jadelink-d3ba0.appspot.com",
+    messagingSenderId: "567012066939"
+  };
+  firebase.initializeApp(config);
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+	// // ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥
+	// // The Firebase SDK is initialized and available here!
+	//
+	// firebase.auth().onAuthStateChanged(user => { });
+	// firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+	// firebase.messaging().requestPermission().then(() => { });
+	// firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+	//
+	// // ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥
 
+	try {
+	  let app = firebase.app();
+	  let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+	  document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+	} catch (e) {
+	  console.error(e);
+	  document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+	}
+  });
+</script>	
+<script>
+document.getElementById('signout').addEventListener('click', signOut, false);
+window.onload = function(){
+initPage();
+}
+
+function signOut(){
+	firebase.auth().signOut().then(function() {
+	  console.log('Signed Out');
+	}, function(error) {
+	  console.error('Sign Out Error', error);
+	});
+}
+var user = firebase.auth().currentUser;
+var name, email, photoUrl, uid, emailVerified;	
+function initPage(){	
+	firebase.auth().onAuthStateChanged(function(user) {
+	  if(user) {
+		  name = user.displayName.substring(1);
+		  email = user.email;
+		  photoUrl = user.photoURL;
+		  emailVerified = user.emailVerified;
+		  uid = user.uid;
+		  document.getElementById("name").innerHTML=name;
+		  document.getElementById("profilePic").src = photoUrl;
+		  document.getElementById("bigProfilePic").src = photoUrl;
+	  }else{
+		window.location.replace('/index.html');
+	  }
+	});
+}
+</script>
 </body>
 </html>
-s
+
