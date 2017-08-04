@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
-<title>JadeLink -Grades</title>
+<title>JadeLink</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
@@ -57,26 +60,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .dropdown a:hover {background-color: #f1f1f1}
 
 .show {display:block;}
-.teacherImages{
-	width:150px;
-	height:150px;
-	border-radius:50%;
-}
-.signOut{
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-	padding:5px;
-	position: absolute;
-	right: 500x;
-	left: 50x;
-	top: 5x;
-}
-.signOut:hover {
-    opacity: 0.8;
-}
 </style>
 
 <body class="w3-light-grey">
@@ -84,7 +67,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Top container -->	
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right">JadeLink Teacher <img src = "/res/logo.png" class = "logo"></img></span>
+  <span class="w3-bar-item w3-right">Synergy 2.0<img src = "http://orig10.deviantart.net/2507/f/2015/080/e/8/high_noon_yasuo_by_reformgfx-d8ml4x2.png" class = "logo"></img></span>
 </div>
 
 <!-- Sidebar/menu -->	
@@ -92,16 +75,17 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container w3-row">
     <div class="w3-col s4">
 	<div class="dropdown">
-	<input type="image" id ="profilePic" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" class="dropbtn" onClick="dropDown()"/>
+	<input type="image" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" class="dropbtn" onClick="dropDown()"/>
 
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Sign Out</a>
+  </div>
 </div>
       
     </div>
     <div class="w3-col s8 w3-bar">
 	<!-- Welcome -->
-      <span>Welcome, <strong id="name">Teacher Name</strong></span><br>
-	  <h1></h1>
-	  <h2 style="text-align='right';font-size:15px"><a id="signout" class="signOut">Sign Out</a></h2>
+      <span>Welcome, <strong>Teacher Name</strong></span><br>
     </div>
 
   </div>
@@ -116,8 +100,19 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="teacherStudentPage.html" class="w3-bar-item w3-button w3-padding "><i class="fa fa-eye fa-fw"></i>  Students</a>
     <a href="teacherCoursesPage.html" class="w3-bar-item w3-button w3-padding" ><i class="fa fa-users fa-fw"></i>  Courses</a>
     <a href="teacherCalendarPage.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Calendar</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding w3-green"><i class="fa fa-diamond fa-fw"></i>  Grades</a>
-    <a href="teacherAttendancePage.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  Attendance</a><br><br>
+    <div class="w3-dropdown-hover">
+	
+    <button class="w3-button"><i class="fa fa-diamond fa-fw"></i>  Grades</button>
+    <div class="w3-dropdown-content w3-bar-block">
+      <a href="teacherGradesClass1.html" class="w3-bar-item w3-button">AP Statistics</a>
+      <a href="teacherGradeClass2.html" class="w3-bar-item w3-button">Advanced Algebra II</a>
+    </div>
+  </div> 
+</div>
+    <a href="teacherAttendancePage.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  Attendance</a>
+    <br><a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  General</a></br>
+	<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  History</a>
+    <br><a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br></br>
   </div>
 </nav>
 
@@ -195,72 +190,6 @@ window.onclick = function(event) {
 }
 </script>
 
-<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBH1w_hx29plsH93-7_lTl_rq0hCma9p0o",
-    authDomain: "jadelink-d3ba0.firebaseapp.com",
-    databaseURL: "https://jadelink-d3ba0.firebaseio.com",
-    projectId: "jadelink-d3ba0",
-    storageBucket: "jadelink-d3ba0.appspot.com",
-    messagingSenderId: "567012066939"
-  };
-  firebase.initializeApp(config);
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-	// // ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥
-	// // The Firebase SDK is initialized and available here!
-	//
-	// firebase.auth().onAuthStateChanged(user => { });
-	// firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-	// firebase.messaging().requestPermission().then(() => { });
-	// firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-	//
-	// // ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥ðŸ”¥
-
-	try {
-	  let app = firebase.app();
-	  let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-	  document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-	} catch (e) {
-	  console.error(e);
-	  document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-	}
-  });
-</script>	
-<script>
-document.getElementById('signout').addEventListener('click', signOut, false);
-window.onload = function(){
-initPage();
-}
-
-function signOut(){
-	firebase.auth().signOut().then(function() {
-	  console.log('Signed Out');
-	}, function(error) {
-	  console.error('Sign Out Error', error);
-	});
-}
-var user = firebase.auth().currentUser;
-var name, email, photoUrl, uid, emailVerified;	
-function initPage(){	
-	firebase.auth().onAuthStateChanged(function(user) {
-	  if(user) {
-		  name = user.displayName.substring(1);
-		  email = user.email;
-		  photoUrl = user.photoURL;
-		  emailVerified = user.emailVerified;
-		  uid = user.uid;
-		  document.getElementById("name").innerHTML=name;
-		  document.getElementById("profilePic").src = photoUrl;
-		  document.getElementById("bigProfilePic").src = photoUrl;
-	  }else{
-		window.location.replace('/index.html');
-	  }
-	});
-}
-</script>
 </body>
 </html>
+s
