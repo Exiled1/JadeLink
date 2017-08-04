@@ -5,8 +5,8 @@ public class Absent {
 	int day;
 	int period;
 	boolean excused;
-	
-	
+
+
 	public Absent(int m, int d, int y, int p, boolean e) {
 		this.month = m;
 		this.day = d;

@@ -21,27 +21,28 @@ public class School {
         ArrayList<Student> students = new ArrayList<Student>();
         //ArrayList<StudentClass> classes = new ArrayList<StudentClass>();
         MysqlDataSource myDataSource = new MysqlDataSource();
-        myDataSource.setUser("teammate");
-        myDataSource.setPassword("TM:MySQL420");
+        // **************This portion of code is to connect to the db***************************
+        myDataSource.setUser("teammate"); //sets the user that connects to the sql db
+        myDataSource.setPassword("TM:MySQL420"); //Sets the password for the sql login.
         myDataSource.setServerName("172.20.10.9"); //the IP address will be different depending on what network the server is on
-        myDataSource.setPortNumber(3306);
-        myDataSource.setDatabaseName("JadeLink");
+        myDataSource.setPortNumber(3306); //sets port number thats used to connect to db
+        myDataSource.setDatabaseName("JadeLink"); //Sets the db name to JadeLink for future reference
         try {
-            Connection conn = myDataSource.getConnection();
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT student_id, enrollment_year, first_name, last_name FROM student_info");
-            while (rs.next()) {
-                int id = rs.getInt("student_id");
-                int grade = 2017 - Integer.parseInt(rs.getString("enrollment_year"));
-                String first = rs.getString("first_name");
-                String last = rs.getString("last_name");
-                students.add(new Student(id, grade, first, last));
+            Connection connection = myDataSource.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultset = statement.executeQuery("SELECT student_id, enrollment_year, first_name, last_name FROM student_info");
+            while (resultset.next()) {
+                int id = resultset.getInt("student_id");
+                int studentEnrollmentYear = 2017 - Integer.parseInt(resultset.getString("enrollment_year"));
+                String firstName = resultset.getString("first_name");
+                String lastName = resultset.getString("last_name");
+                students.add(new Student(id, studentEnrollmentYear, firstName, lastName));
             }
-            rs.close();
-            stmt.close();
+            resultset.close();
+            statement.close();
             conn.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        } catch (Exception exception) {
+            exception.printStackTrace();
         }
         /*
 		//getting student information
