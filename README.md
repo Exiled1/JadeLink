@@ -86,3 +86,27 @@ https://stackoverflow.com/questions/10964693/java-embedding-into-html
 https://stackoverflow.com/questions/985754/how-to-deploy-a-java-applet-for-todays-browsers-applet-embed-object
 
 Transcompiling Java into Javascript: http://www.gwtproject.org/overview.html
+----------------------------------------------------------------------------------------------------------------------------------------
+{
+    "protocol": "sftp",
+    "host": "jadelink.jensenturner.tk",
+    "port": 22000,
+    "user": "jturner",
+    "pass": "qwertyuiop[]\\",
+    "promptForPass": false,
+    "remote": "/var/jadelink",
+    "local": "",
+    "agent": "",
+    "privatekey": "",
+    "passphrase": "",
+    "hosthash": "",
+    "ignorehost": true,
+    "connTimeout": 10000,
+    "keepalive": 10000,
+    "keyboardInteractive": false,
+    "remoteCommand": "",
+    "remoteShell": "",
+    "watch": [],
+    "watchTimeout": 500
+}
+
