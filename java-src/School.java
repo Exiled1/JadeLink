@@ -40,7 +40,7 @@ public class School {
             }
             resultset.close();
             statement.close();
-            conn.close();
+            connection.close();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
