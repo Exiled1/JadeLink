@@ -87,6 +87,7 @@ https://stackoverflow.com/questions/985754/how-to-deploy-a-java-applet-for-today
 
 Transcompiling Java into Javascript: http://www.gwtproject.org/overview.html
 ----------------------------------------------------------------------------------------------------------------------------------------
+
 {
     "protocol": "sftp",
     "host": "jadelink.jensenturner.tk",
@@ -109,6 +110,7 @@ Transcompiling Java into Javascript: http://www.gwtproject.org/overview.html
     "watch": [],
     "watchTimeout": 500
 }
+
 ----------------------------------------------------------------------------------------------------------------------------------------
 - Meteor
 - Express
@@ -140,4 +142,5 @@ when you open ssh do: cd /var/jadelink
 	node main.js
 
 (ctrl+c to exit)
+
 ----------------------------------------------------------------------------------------------------------------------------------------
