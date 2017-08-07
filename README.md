@@ -109,4 +109,35 @@ Transcompiling Java into Javascript: http://www.gwtproject.org/overview.html
     "watch": [],
     "watchTimeout": 500
 }
+----------------------------------------------------------------------------------------------------------------------------------------
+- Meteor
+- Express
+- Handlebars
+- templating engine
+- webstorm
+- jsp (bad)
+-
 
+
+
+
+-------------------------------
+- Node.js
+- Express.js (library)
+- Database connector: node-mysql
+- templating agent: handlebars
+- 
+
+SSH Server: ssh -p 22000 jturner@jadelink.jensenturner.tk
+password for everything: qwertyuiop[]\
+open mysql console: mysql -u root -p jadelink
+sudo systemctl start jadelink-interface
+sudo systemctl stop jadelink-interface
+sudo systemctl status jadelink-interface
+sudo systemctl restart jadelink-interface
+
+when you open ssh do: cd /var/jadelink
+	node main.js
+
+(ctrl+c to exit)
+----------------------------------------------------------------------------------------------------------------------------------------
