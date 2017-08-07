@@ -144,7 +144,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Widgets at top, still need to be turned into buttons -->
     <div class="w3-container">
     <!-- List of all the students and their grades -->
-    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white" id="gradesTable">
 	 <tr>
         <th>Student Name</th>
         <th>Grade</th>
@@ -174,7 +174,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <td><button onclick="openWindow()" class = "grades">85%</button></td>
       </tr>
     </table><br>
-    
+    	<button onclick="addRow()">Add Student</button>
+
   </div>
 
 
@@ -297,10 +298,16 @@ function initPage(){
 		  document.getElementById("name").innerHTML=name;
 		  document.getElementById("profilePic").src = photoUrl;
 		  document.getElementById("bigProfilePic").src = photoUrl;
-	  }else{
-		window.location.replace('/index.html');
 	  }
 	});
+}
+function addRow() {
+    var table = document.getElementById("gradesTable");
+    var row = table.insertRow(1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = "STUDENT NAME";
+    cell2.innerHTML = "GRADE";
 }
 </script>
 </body>
