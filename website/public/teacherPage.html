@@ -15,7 +15,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .grades:hover{
 	color:white;
 }
-.logo{	
+.logo{
 	width:25px;
 	height:25px;
 	border-radius:50%;
@@ -81,13 +81,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <body class="w3-light-grey">
 
-<!-- Top container -->	
+<!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
   <span class="w3-bar-item w3-right">JadeLink Teacher <img src = "/res/logo.png" class = "logo"></img></span>
 </div>
 
-<!-- Sidebar/menu -->	
+<!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="w3-container w3-row">
     <div class="w3-col s4">
@@ -95,7 +95,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	<input type="image" id="profilePic" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" class="dropbtn" onClick="dropDown()"/>
 
 </div>
-      
+
     </div>
     <div class="w3-col s8 w3-bar">
 	<!-- Welcome -->
@@ -118,14 +118,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="teacherCalendarPage.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Calendar</a>
 
     <div class="w3-dropdown-hover">
-	
-    <button class="w3-button"><i class="fa fa-diamond fa-fw"></i>  Grades</button>	
+
+    <button class="w3-button"><i class="fa fa-diamond fa-fw"></i>  Grades</button>
     <div class="w3-dropdown-content w3-bar-block">
       <a href="teacherGradesClass1.html" class="w3-bar-item w3-button" style="text-indent: 25px">AP Statistics</a>
       <a href="teacherGradesClass2.html" class="w3-bar-item w3-button" style="text-indent: 25px">Advanced Algebra II</a>
 	      <a href="teacherAttendancePage.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  Attendance</a>
     </div>
-  </div> 
+  </div>
 
     <a href="teacherAttendancePage.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  Attendance</a>
 
@@ -144,12 +144,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
   </header>
   <!-- Widgets at top, still need to be turned into buttons -->
-  
 
-  
 
-  
-  
+
+
+
+
 
   <div class="w3-container">
     <!-- List of all the students and their grades -->
@@ -160,30 +160,30 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       </tr>
       <tr>
         <td>Kevin Men</td>
-        <td><button onclick="openWindow()" class = "grades">95%</button></td>
+        <td><a href="studentPage.html" class = "grades">95%</a></td>
       </tr>
       <tr>
         <td>Russell Chai</td>
-        <td><button onclick="openWindow()" class = "grades">95%</button></td>
+        <td><a onclick="openWindow()" class = "grades">95%</a></td>
       </tr>
       <tr>
         <td>Justin Yang</td>
-        <td><button onclick="openWindow()" class = "grades">95%</button></td>
+        <td><a onclick="openWindow()" class = "grades">95%</a></td>
       </tr>
       <tr>
         <td>Connor Shu</td>
-        <td><button onclick="openWindow()" class = "grades">95%</button></td>
+        <td><a onclick="openWindow()" class = "grades">95%</a></td>
       </tr>
       <tr>
         <td>Jonathan Guo</td>
-        <td><button onclick="openWindow()" class = "grades">95%</button></td>
+        <td><a onclick="openWindow()" class = "grades">95%</a></td>
       </tr>
       <tr>
         <td>Jason Shi</td>
-        <td><button onclick="openWindow()" class = "grades">85%</button></td>
+        <td><a onclick="openWindow()" class = "grades">85%</a></td>
       </tr>
     </table><br>
-    
+
   </div>
   <hr>
   <!-- General Statistics for the teacher -->
@@ -205,11 +205,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
   </div>
   <hr>
- 
 
-  
 
- 
+
+
+
 
   <!-- End page content -->
 </div>
@@ -294,7 +294,7 @@ window.onclick = function(event) {
 	  document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
 	}
   });
-</script>	
+</script>
 <script>
 document.getElementById('signout').addEventListener('click', signOut, false);
 window.onload = function(){
@@ -309,8 +309,8 @@ function signOut(){
 	});
 }
 var user = firebase.auth().currentUser;
-var name, email, photoUrl, uid, emailVerified;	
-function initPage(){	
+var name, email, photoUrl, uid, emailVerified;
+function initPage(){
 	firebase.auth().onAuthStateChanged(function(user) {
 	  if(user) {
 		  name = user.displayName.substring(1);
