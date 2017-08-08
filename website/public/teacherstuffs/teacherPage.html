@@ -11,6 +11,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .grades{
 	background-color: transparent;
 	border-color:transparent;
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	width: 100%;
+	text-decoration: none;
+	color: initial;
 }
 .grades:hover{
 	color:white;
@@ -78,14 +84,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     opacity: 0.8;
 }
 
-a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
 
-    text-decoration: none;
-    color: initial;
-}
 </style>
 
 <body class="w3-light-grey">
@@ -149,7 +148,7 @@ a.button {
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 
   <!-- Header -->
-  <header class="w3-container" style="padding-top:22px">
+  <header class="w3-container" style="padding-top:26px">
     <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
   </header>
   <!-- Widgets at top, still need to be turned into buttons -->
@@ -165,31 +164,31 @@ a.button {
     <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
 	 <tr>
         <th>Student Name</th>
-        <th>Grade</th>
+        <th align="right">Grade</th>
       </tr>
       <tr>
         <td>Kevin Men</td>
-        <td><a href = "grade1.html" class = "grades">95%</a></td>
+        <td><form action="grade1.html"><input class="grades" type=submit value="95%" style="width:100%"></td>
       </tr>
       <tr>
         <td>Russell Chai</td>
-        <td><button onclick="openWindow()" class = "grades">95%</button></td>
+        <td><form action="grade1.html"><input class="grades" type=submit value="95%" style="width:100%"></td>
       </tr>
       <tr>
         <td>Justin Yang</td>
-        <td><button onclick="openWindow()" class = "grades">95%</button></td>
+        <td><form action="grade1.html"><input class="grades" type=submit value="95%" style="width:100%"></td>
       </tr>
       <tr>
         <td>Connor Shu</td>
-        <td><button onclick="openWindow()" class = "grades">95%</button></td>
+        <td><form action="grade1.html"><input class="grades" type=submit value="95%" style="width:100%"></td>
       </tr>
       <tr>
         <td>Jonathan Guo</td>
-        <td><button onclick="openWindow()" class = "grades">95%</button></td>
+        <td><form action="grade1.html"><input class="grades" type=submit value="95%" style="width:100%"></td>
       </tr>
       <tr>
         <td>Jason Shi</td>
-        <td><button onclick="openWindow()" class = "grades">85%</button></td>
+        <td><form action="grade1.html"><input class="grades" type=submit value="95%" style="width:100%"></td>
       </tr>
     </table><br>
 
