@@ -1,162 +1,186 @@
 <!DOCTYPE html>
 <html>
-<title>JadeLink Login</title>
-<meta charset="UTF-8">
-<link rel="icon" href="/res/logo.png">
-<style>
-form {
-    border: 3px solid #f1f1f1;
-    max-width: 500px;
-    margin: auto;
-}
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-button:hover {
-    opacity: 0.8;
-}
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-}
-img.avatar {
-    width: 50%;
-}
-.container {
-    padding: 16px;
-}
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
-}
-</style>
-<body>
+    <title>JadeLink Login</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/res/logo.png">
+    <style>
+        body {
+            background-color: #131d34;
+        }
 
-<br>
-</br>
-<br>
-</br>
+        form {
+            border: 3px solid #1e2238;
+            max-width: 500px;
+            margin: auto;
+        }
 
-<form action="/action_page.php">
-  <div class="imgcontainer">
-    <img src="/res/logoTitle.png" alt="Avatar" class="avatar">
-  </div>
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            background-color: rgb(40, 42, 65);
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #1e2238;
+            box-sizing: border-box;
+        }
 
-  <div class="container">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" id="email" required>
+        button {
+            background-color: #275a29;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
 
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" id="password" required>
+        button:hover {
+            opacity: 0.8;
+        }
 
-    <button type="button" id="login">Login</button>
-  </div>
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+            width: 50%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        .smokeyWhiteColor {
+            color: #51566e
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+        /* Change styles for span and cancel button on extra small screens */
+
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <body>
+
+        <br>
+        </br>
+        <br>
+        </br>
+
+        <form action="/action_page.php">
+            <div class="imgcontainer">
+                <img src="/res/logoTitle.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label class="smokeyWhiteColor"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" id="email" required>
+
+                <label class="smokeyWhiteColor"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" id="password" required>
+
+                <button type="button" id="login">Login</button>
+            </div>
 
 
-</form>
-<script>
-document.getElementById('login').addEventListener('click', signIn, false);
-document.getElementById("email")
-    .addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode == 13) {
-        document.getElementById("login").click();
-    }
-});
-document.getElementById("password")
-    .addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode == 13) {
-        document.getElementById("login").click();
-    }
-});
-function signIn(){
-	var email = document.getElementById('email').value;
-	var password = document.getElementById('password').value;
-	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-		popUp();
-		var errorCode = error.code;
-	});
-}
-function initApp(){	
-	var user = firebase.auth().currentUser;
-	if(user != null){
-		if(user.displayName.substring(0,1)=="S"){
-			window.location.replace('/studentPage.html');
-		}
-		if(user.displayName.substring(0,1)=="T"){
-			window.location.replace('/teacher.html');
-		}
-	}else{
-	firebase.auth().onAuthStateChanged(function(user) {
-	  if(user) {
-		if(user.displayName.substring(0,1)=="S"){
-			window.location.replace('/studentPage.html');
-		}
-		if(user.displayName.substring(0,1)=="T"){
-			window.location.replace('/teacher.html');
-		}
-	  }else{
-	  }
-	});
-	}
-}
-function popUp() {
-    // Get the snackbar DIV
-    var x = document.getElementById("popup")
+        </form>
+        <script>
+            document.getElementById('login').addEventListener('click', signIn, false);
+            document.getElementById("email")
+                .addEventListener("keyup", function(event) {
+                    event.preventDefault();
+                    if (event.keyCode == 13) {
+                        document.getElementById("login").click();
+                    }
+                });
+            document.getElementById("password")
+                .addEventListener("keyup", function(event) {
+                    event.preventDefault();
+                    if (event.keyCode == 13) {
+                        document.getElementById("login").click();
+                    }
+                });
 
-    x.className = "show";
+            function signIn() {
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+                firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+                    popUp();
+                    var errorCode = error.code;
+                });
+            }
 
-    // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-}
+            function initApp() {
+                var user = firebase.auth().currentUser;
+                if (user != null) {
+                    if (user.displayName.substring(0, 1) == "S") {
+                        window.location.replace('/studentPage.html');
+                    }
+                    if (user.displayName.substring(0, 1) == "T") {
+                        window.location.replace('/teacher.html');
+                    }
+                } else {
+                    firebase.auth().onAuthStateChanged(function(user) {
+                        if (user) {
+                            if (user.displayName.substring(0, 1) == "S") {
+                                window.location.replace('/studentPage.html');
+                            }
+                            if (user.displayName.substring(0, 1) == "T") {
+                                window.location.replace('/teacher.html');
+                            }
+                        } else {}
+                    });
+                }
+            }
 
-window.onload = function() {
-      initApp();
-    };
+            function popUp() {
+                // Get the snackbar DIV
+                var x = document.getElementById("popup")
 
-</script>
-<script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDpiSFR49X-0u8Z-Nlg2Z0esus8iltGDx0",
-    authDomain: "synergy-55f2f.firebaseapp.com",
-    databaseURL: "https://synergy-55f2f.firebaseio.com",
-    projectId: "synergy-55f2f",
-    storageBucket: "synergy-55f2f.appspot.com",
-    messagingSenderId: "770327766142"
-  };
-  firebase.initializeApp(config);
-</script>
-</body>
+                x.className = "show";
+
+                // After 3 seconds, remove the show class from DIV
+                setTimeout(function() {
+                    x.className = x.className.replace("show", "");
+                }, 3000);
+            }
+
+            window.onload = function() {
+                initApp();
+            };
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDpiSFR49X-0u8Z-Nlg2Z0esus8iltGDx0",
+                authDomain: "synergy-55f2f.firebaseapp.com",
+                databaseURL: "https://synergy-55f2f.firebaseio.com",
+                projectId: "synergy-55f2f",
+                storageBucket: "synergy-55f2f.appspot.com",
+                messagingSenderId: "770327766142"
+            };
+            firebase.initializeApp(config);
+        </script>
+    </body>
+
 </html>
