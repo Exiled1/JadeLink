@@ -86,3 +86,61 @@ https://stackoverflow.com/questions/10964693/java-embedding-into-html
 https://stackoverflow.com/questions/985754/how-to-deploy-a-java-applet-for-todays-browsers-applet-embed-object
 
 Transcompiling Java into Javascript: http://www.gwtproject.org/overview.html
+----------------------------------------------------------------------------------------------------------------------------------------
+
+{
+    "protocol": "sftp",
+    "host": "jadelink.jensenturner.tk",
+    "port": 22000,
+    "user": "jturner",
+    "pass": "qwertyuiop[]\\",
+    "promptForPass": false,
+    "remote": "/var/jadelink",
+    "local": "",
+    "agent": "",
+    "privatekey": "",
+    "passphrase": "",
+    "hosthash": "",
+    "ignorehost": true,
+    "connTimeout": 10000,
+    "keepalive": 10000,
+    "keyboardInteractive": false,
+    "remoteCommand": "",
+    "remoteShell": "",
+    "watch": [],
+    "watchTimeout": 500
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------
+- Meteor
+- Express
+- Handlebars
+- templating engine
+- webstorm
+- jsp (bad)
+-
+
+
+
+
+-------------------------------
+- Node.js
+- Express.js (library)
+- Database connector: node-mysql
+- templating agent: handlebars
+- 
+
+SSH Server: ssh -p 22000 jturner@jadelink.jensenturner.tk
+password for everything: qwertyuiop[]\
+open mysql console: mysql -u root -p jadelink
+sudo systemctl start jadelink-interface
+sudo systemctl stop jadelink-interface
+sudo systemctl status jadelink-interface
+sudo systemctl restart jadelink-interface
+
+when you open ssh do: cd /var/jadelink
+	node main.js
+
+(ctrl+c to exit)
+
+----------------------------------------------------------------------------------------------------------------------------------------
