@@ -71,7 +71,8 @@ public class Student {
 	//List all classes & grades
 	public void list() {
 		for(int i=0;i<8;i++) {
-			System.out.println(fname + " " + lname + " has " + grades[i] + " in " + schedule[i] + " in Period " + (i+1));
+			if(schedule[i].equals(null)) System.out.println(fname + " " + lname + " does not have a class in Period " + (i+1));
+			else System.out.println(fname + " " + lname + " has " + grades[i] + " in " + schedule[i] + " in Period " + (i+1));
 		}
 	}
 	//Update grades in a specific class
