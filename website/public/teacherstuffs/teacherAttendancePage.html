@@ -86,6 +86,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .signOut:hover {
     opacity: 0.8;
 }
+.attendence {
+	cellspacing: 5px;
+}
+
 </style>
 
 <body class="w3-light-grey">
@@ -154,6 +158,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <h5><b><i class="fa fa-dashboard"></i> Attendance</b></h5>
   </header>
   <!-- Widgets at top, still need to be turned into buttons -->
+<!--
 	<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
 	 <tr>
         <th><input type="image" src="http://orig10.deviantart.net/2507/f/2015/080/e/8/high_noon_yasuo_by_reformgfx-d8ml4x2.png" name="imageButton" class="studentImages" onClick="markAbsent()"/><h1 style="font-size:15px">High Noon Yasuo</h1></th>
@@ -197,16 +202,27 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       </tr>
 
     </table>
+-->
+<div id="duplicater">
 
+<table class="attendence" id="attendenceTable">
+		<tr>
+			<th>Name</th>
+			<th>Present/Absent</th>
+		</tr>
+		<tr>
+		  <td><input type="text" name="fname" /></td>
+		  <td><select>
+				<option value="Present">Present</option>
+				<option value="Absent">Absent</option>
+			</select>
+		  </td>
+		</tr>
+</table>
 
+</div>
 
-
-
-
-
-
-
-
+<button onclick="addRowTable()">New Row</button>
 
 
   <!-- End page content -->
@@ -324,6 +340,26 @@ function initPage(){
 		  document.getElementById("bigProfilePic").src = photoUrl;
 	  }
 	});
+
+	var i = 0;
+	var original = document.getElementById('duplicater');
+
+	function duplicate() {
+	    var clone = original.cloneNode(true); // "deep" clone
+	    clone.id = "duplicater" + i++;
+	    // or clone.id = ""; if the divs don't need an ID
+	    original.parentNode.appendChild(clone);
+	}
+	function addRowTable() {
+	    var table = document.getElementById("attendenceTable");
+	    var row = table.insertRow(1);
+	    var cell1 = row.insertCell(0);
+	    var cell2 = row.insertCell(1);
+	    cell1.innerHTML =
+	    cell2.innerHTML = "GRADE";
+	}
+
+
 }
 </script>
 </body>
