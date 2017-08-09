@@ -218,15 +218,50 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 			</select>
 		  </td>
 		</tr>
+		<tr>
+		  <td><input type="text" name="fname" /></td>
+		  <td><select>
+				<option value="Present">Present</option>
+				<option value="Absent">Absent</option>
+			</select>
+		  </td>
+		</tr>
+		<tr>
+		  <td><input type="text" name="fname" /></td>
+		  <td><select>
+				<option value="Present">Present</option>
+				<option value="Absent">Absent</option>
+			</select>
+		  </td>
+		</tr>
+		<tr>
+		  <td><input type="text" name="fname" /></td>
+		  <td><select>
+				<option value="Present">Present</option>
+				<option value="Absent">Absent</option>
+			</select>
+		  </td>
+		</tr>
+		<tr>
+		  <td><input type="text" name="fname" /></td>
+		  <td><select>
+				<option value="Present">Present</option>
+				<option value="Absent">Absent</option>
+			</select>
+		  </td>
+		</tr>
 </table>
 
 </div>
 
-<button onclick="addRowTable()">New Row</button>
+<button id="button" onclick="duplicate()">New Row</button>
 
 
   <!-- End page content -->
 </div>
+
+
+
 
 <script>
 // Get the Sidebar
@@ -346,7 +381,7 @@ function initPage(){
 
 	function duplicate() {
 	    var clone = original.cloneNode(true); // "deep" clone
-	    clone.id = "duplicater" + i++;
+	    clone.id = "duplicater"
 	    // or clone.id = ""; if the divs don't need an ID
 	    original.parentNode.appendChild(clone);
 	}
