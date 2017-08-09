@@ -57,7 +57,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		height:150px;
 		border-radius:50%;
 	}
-	
+
 .studentMessageImage {
 	vertical-align: "center";
 	height: 450px;
@@ -139,14 +139,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </br>
   <hr>
 
-  
-  
+
+
 	<div>
 	<p align="center"><img align="center" src="/res/TeacherMessages.png" alt="studentMessages" class="studentMessageImage"></img></p>
 
 	</div>
-  
-  
+
+
 
 
 
@@ -230,7 +230,7 @@ window.onclick = function(event) {
 	  document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
 	}
   });
-</script>	
+</script>
 <script>
 document.getElementById('signout').addEventListener('click', signOut, false);
 window.onload = function(){
@@ -245,8 +245,8 @@ function signOut(){
 	});
 }
 var user = firebase.auth().currentUser;
-var name, email, photoUrl, uid, emailVerified;	
-function initPage(){	
+var name, email, photoUrl, uid, emailVerified;
+function initPage(){
 	firebase.auth().onAuthStateChanged(function(user) {
 	  if(user) {
 		  name = user.displayName.substring(1);
@@ -256,8 +256,6 @@ function initPage(){
 		  uid = user.uid;
 		  document.getElementById("name").innerHTML=name;
 		  document.getElementById("profilePic").src = photoUrl;
-	  }else{
-		window.location.replace('/index.html');
 	  }
 	});
 }
